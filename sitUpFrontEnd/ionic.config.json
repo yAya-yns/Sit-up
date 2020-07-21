@@ -1,0 +1,7 @@
+{
+  "name": "sitUpFrontEnd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
