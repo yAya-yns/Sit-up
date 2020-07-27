@@ -1,16 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1s
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullcreen]="true">
+  <!-- today best -->
+  <ion-row class="top">
+    <ion-card class="todaysBest">
+      <ion-card-header>
+        <ion-card-title>Today's Best Record</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h1 class="middle time">10:00</h1>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- today's timeline or barchat-->
+  <ion-row>
+    <ion-card>
+      <ion-card-header>
+        Today's Summary
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
 
+  </ion-row>
+
+  <!-- weekly analysis -->
+  <ion-row>
+    <ion-card>
+      <ion-card-header>
+        Weekly Analysis
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
 </ion-content>
