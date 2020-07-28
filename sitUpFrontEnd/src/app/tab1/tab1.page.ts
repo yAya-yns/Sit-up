@@ -1,12 +1,17 @@
-
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { CameraPreview } from '@ionic-native/camera-preview/ngx';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
+
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 
 
 export class Tab1Page implements OnInit {
@@ -17,19 +22,32 @@ export class Tab1Page implements OnInit {
   setZoom = 1;
   flashMode = 'off';
   isToBack = false;
-  constructor(
-    private cameraPreview: CameraPreview
-  ) { }
+  constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview) { }
+  
+  cameraPreviewOpts: CameraPreviewOptions = { x: 80, y: 450, width: 250, height: 300, camera:"front", tapPhoto: true, previewDrag: true, toBack: false, alpha: 1, tapFocus: false, disableExifHeaderStripping: false};
+  photo: SafeResourceUrl;
 
 
+  async takePicture() {
+    const image = await Plugins.Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera
+    });
+
+    this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
+  }
   ngOnInit() {
   }
 
   startCameraAbove() {
-    this.cameraPreview.stopCamera().then(() => {
-      this.isToBack = false;
-      this.cameraPreview.startCamera({ x: 80, y: 450, width: 250, height: 300, toBack: false, previewDrag: true, tapPhoto: true });
-    })
+    this.isToBack = false;
+    this.cameraPreview.startCamera(this.cameraPreviewOpts);
+    // this.cameraPreview.stopCamera().then(() => {
+    //   this.isToBack = false;
+      
+    // })
   }
 
   startCameraBelow() {
@@ -44,18 +62,18 @@ export class Tab1Page implements OnInit {
     this.cameraPreview.stopCamera();
   }
 
-  takePicture() {
-    this.cameraPreview.takePicture({
-      width: 1280,
-      height: 1280,
-      quality: 85
-    }).then((imageData) => {
-      this.IMAGE_PATH = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      console.log(err);
-      this.IMAGE_PATH = 'assets/img/test.jpg';
-    });
-  }
+  // takePicture() {
+  //   this.cameraPreview.takePicture({
+  //     width: 1280,
+  //     height: 1280,
+  //     quality: 85
+  //   }).then((imageData) => {
+  //     this.IMAGE_PATH = 'data:image/jpeg;base64,' + imageData;
+  //   }, (err) => {
+  //     console.log(err);
+  //     this.IMAGE_PATH = 'assets/img/test.jpg';
+  //   });
+  // }
 
   switchCamera() {
     this.cameraPreview.switchCamera();

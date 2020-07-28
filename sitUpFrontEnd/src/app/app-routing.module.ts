@@ -4,8 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-    // loadChildren: () => import('./land-in/land-in.module').then( m => m.LandInPageModule)
+    // loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./land-in/land-in.module').then( m => m.LandInPageModule)
   },
   {
     path: 'land-in',

@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 
 import { CameraPreview } from '@ionic-native/camera-preview/ngx';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
