@@ -1,7 +1,8 @@
 {
   "name": "sitUpFrontEnd",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
