@@ -23,8 +23,19 @@ export class Tab1Page implements OnInit {
   flashMode = 'off';
   isToBack = false;
   constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview) { }
-  
-  cameraPreviewOpts: CameraPreviewOptions = { x: 80, y: 450, width: 250, height: 300, camera:"front", tapPhoto: true, previewDrag: true, toBack: false, alpha: 1, tapFocus: false, disableExifHeaderStripping: false};
+
+  cameraPreviewOpts: CameraPreviewOptions = { 
+    x: 20, 
+    y: 100, 
+    width: 300, 
+    height: 250, 
+    camera: "front", 
+    tapPhoto: true, 
+    previewDrag: true, 
+    toBack: false, 
+    alpha: 1, 
+    tapFocus: false, 
+    disableExifHeaderStripping: false };
   photo: SafeResourceUrl;
 
 
@@ -42,11 +53,12 @@ export class Tab1Page implements OnInit {
   }
 
   startCameraAbove() {
-    this.isToBack = false;
+    
     this.cameraPreview.startCamera(this.cameraPreviewOpts);
+    this.isToBack = false;
     // this.cameraPreview.stopCamera().then(() => {
     //   this.isToBack = false;
-      
+
     // })
   }
 

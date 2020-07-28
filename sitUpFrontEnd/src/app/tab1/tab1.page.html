@@ -15,6 +15,11 @@
         <ion-icon color="success" name="sunny-outline" isActive=true></ion-icon> <span color="success">Right</span>
       </ion-col>
       <ion-col>
+        <ion-button (click)="switchCamera()" fill="clear" color="medium">
+          <ion-icon name="sync-circle-outline"> </ion-icon> <span>Switch</span>
+        </ion-button>
+      </ion-col>
+      <ion-col>
         <ion-icon color="danger" name="sunny-outline"></ion-icon> <span color="danger">Wrong</span>
       </ion-col>
     </ion-row>
@@ -25,23 +30,21 @@
           <ion-card-header>
             <ion-card-subtitle>This should be a screen to AI </ion-card-subtitle>
             <br>
-            <br>
-            <br>
-            <ion-button (click)="startCameraAbove()" expand="block" shape="round">
-              <ion-icon slot="start" name="arrow-forward-circle"></ion-icon>
-              Connect
-            </ion-button>
-            <ion-button shape="round" expand="block" color="success" (click)="takePicture()">Take Picture</ion-button>
           </ion-card-header>
 
           <ion-card-content>
-            <br>
+            <ion-button (click)="startCameraAbove()" expand="block" shape="round">
+              <ion-icon slot="start" name="arrow-forward-circle" color="secondary"></ion-icon>
+              Connect
+            </ion-button>
+            <ion-button shape="round" expand="block" color="success" (click)="takePicture()">Take Picture</ion-button>
+            <ion-button shape="round" expand="block" color="danger" (click)="stopCamera()">Disconnect</ion-button>
             <br>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
-    
+
     <ion-row>
       <ion-col>
         <ion-card class="center">
