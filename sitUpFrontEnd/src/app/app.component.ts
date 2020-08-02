@@ -19,7 +19,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router : Router
   ) {
-    this.initializeApp();
+    // this.initializeApp();
   }
 
 

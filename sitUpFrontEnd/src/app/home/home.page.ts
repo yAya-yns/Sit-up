@@ -140,6 +140,6 @@ function showImageInVideo(images, i) {
   if (i < images.length) {
     console.log(images)
     document.getElementById('video').style.background = "url('../../assets/giphy-0/" + images[i] + "')";
-    setTimeout(showImageInVideo.bind(null,images, i+1), 100)
+    setTimeout(showImageInVideo.bind(null,images, i+1), 300)
   }
 }

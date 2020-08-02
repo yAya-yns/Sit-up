@@ -3,9 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '', redirectTo: 'land-in', pathMatch:"full"
+  },
+  {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-    // loadChildren: () => import('./land-in/land-in.module').then( m => m.LandInPageModule)
   },
   {
     path: 'land-in',
