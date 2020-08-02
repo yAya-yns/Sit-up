@@ -39,16 +39,17 @@ export class homePage implements OnInit {
   photo: SafeResourceUrl;
 
 
-  async takePicture() {
-    const image = await Plugins.Camera.getPhoto({
-      quality: 100,
-      allowEditing: true,
-      resultType: CameraResultType.DataUrl,
-      source: CameraSource.Camera
-    });
+  
+  // async takePicture() {
+  //   const image = await Plugins.Camera.getPhoto({
+  //     quality: 100,
+  //     allowEditing: true,
+  //     resultType: CameraResultType.DataUrl,
+  //     source: CameraSource.Camera
+  //   });
 
-    this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
-  }
+  //   this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
+  // }
   ngOnInit() {
   }
 
@@ -74,18 +75,18 @@ export class homePage implements OnInit {
     this.cameraPreview.stopCamera();
   }
 
-  // takePicture() {
-  //   this.cameraPreview.takePicture({
-  //     width: 1280,
-  //     height: 1280,
-  //     quality: 85
-  //   }).then((imageData) => {
-  //     this.IMAGE_PATH = 'data:image/jpeg;base64,' + imageData;
-  //   }, (err) => {
-  //     console.log(err);
-  //     this.IMAGE_PATH = 'assets/img/test.jpg';
-  //   });
-  // }
+  takePicture() {
+    this.cameraPreview.takePicture({
+      width: 1280,
+      height: 1280,
+      quality: 85
+    }).then((imageData) => {
+      this.IMAGE_PATH = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      console.log(err);
+      this.IMAGE_PATH = 'assets/img/test.jpg';
+    });
+  }
 
   switchCamera() {
     this.cameraPreview.switchCamera();

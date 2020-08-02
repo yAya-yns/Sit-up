@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="center">
-      Set-Up!
+      Sit-Up!
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,11 +14,11 @@
       <ion-col>
         <ion-icon color="success" name="sunny-outline" isActive=true></ion-icon> <span color="success">Right</span>
       </ion-col>
-      <ion-col>
+      <!-- <ion-col>
         <ion-button (click)="switchCamera()" fill="clear" color="medium">
           <ion-icon name="sync-circle-outline"> </ion-icon> <span>Switch</span>
         </ion-button>
-      </ion-col>
+      </ion-col> -->
       <ion-col>
         <ion-icon color="danger" name="sunny-outline"></ion-icon> <span color="danger">Wrong</span>
       </ion-col>
@@ -27,19 +27,15 @@
     <ion-row>
       <ion-col>
         <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>This should be a screen to AI </ion-card-subtitle>
-            <br>
-          </ion-card-header>
+          <ion-card-content class="window">
 
-          <ion-card-content>
-            <ion-button (click)="startCameraAbove()" expand="block" shape="round">
-              <ion-icon slot="start" name="arrow-forward-circle" color="secondary"></ion-icon>
-              Connect
-            </ion-button>
-            <ion-button shape="round" expand="block" color="success" (click)="takePicture()">Take Picture</ion-button>
-            <ion-button shape="round" expand="block" color="danger" (click)="stopCamera()">Disconnect</ion-button>
-            <br>
+            <div class="wcenter">
+              <ion-button (click)="startCameraAbove()" shape="round" color="green">
+                <ion-icon slot="start" name="arrow-forward-circle" color="light"></ion-icon>Connect
+              </ion-button>
+              <ion-button shape="round" color="pink" (click)="stopCamera()">Disconnect</ion-button>
+            </div>
+
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -48,7 +44,7 @@
     <ion-row>
       <ion-col>
         <ion-card class="center">
-          <ion-text color="success">
+          <ion-text color="green">
             Correct Posture Time <br>
           </ion-text>
           <h2 class="center"> 00 </h2>
@@ -56,7 +52,7 @@
       </ion-col>
       <ion-col>
         <ion-card class="center">
-          <ion-text color="danger">
+          <ion-text color="pink">
             Wrong Posture Time <br>
           </ion-text>
           <h2 class="center"> 00 </h2>
@@ -66,14 +62,15 @@
 
     <ion-row> <br> </ion-row>
     <ion-row>
-      <ion-button class="center" shape="round" color="success" (click)="takePicture()">Set A Goal!</ion-button>
+      <ion-button class="center" shape="round" color="success" (click)="takePicture()" color="green">Set A Goal!
+      </ion-button>
     </ion-row>
     <ion-row> <br> </ion-row>
-    <ion-row>
-      <ion-text color="primary" class="center">
+    <!-- <ion-row>
+      <ion-text color="blue" class="center">
         Keep Going!
       </ion-text>
-    </ion-row>
+    </ion-row> -->
 
 
   </ion-grid>
