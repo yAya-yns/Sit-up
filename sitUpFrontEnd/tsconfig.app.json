@@ -1,8 +1,11 @@
 {
+  "compilerOptions": {
+        "types": ["node"]
+  },
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": ["node"]
   },
   "files": [
     "src/main.ts",
@@ -14,5 +17,11 @@
   ],
   "exclude": [
     "src/**/*.spec.ts"
-  ]
+  ],
+  "types": [
+    "node" 
+  ],
+  "typeRoots": [ 
+  "../node_modules/@types"
+ ]  
 }

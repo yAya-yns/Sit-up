@@ -5,7 +5,6 @@ import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, Camer
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -51,6 +50,7 @@ export class homePage implements OnInit {
   //   this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
   // }
   ngOnInit() {
+    this.getAllImage();
   }
 
   startCameraAbove() {
@@ -69,8 +69,6 @@ export class homePage implements OnInit {
       this.cameraPreview.startCamera({ x: 0, y: 50, width: window.screen.width, height: window.screen.height, camera: "front", tapPhoto: true, previewDrag: false, toBack: true });
     })
   }
-
-
   stopCamera() {
     this.cameraPreview.stopCamera();
   }
@@ -118,6 +116,18 @@ export class homePage implements OnInit {
     }, (err) => {
       console.log(err);
     });
+  }
+
+
+  getAllImage(){
+    // const imageFolder = '../assets/giphy-0/'
+    // const fs = require('fs');
+
+    // fs.readdir(imageFolder, (err, files) => {
+    //   files.forEach(f => {
+    //     console.log(f)
+    //   })
+    // })
   }
 
 }
