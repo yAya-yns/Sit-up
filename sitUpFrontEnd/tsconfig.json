@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "types": ["node"],
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -20,11 +19,5 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  },
-  "types": [
-    "node" 
-  ],
-  "typeRoots": [ 
-  "../node_modules/@types"
- ]  
+  }
 }

@@ -1,3 +1,4 @@
+import { File } from '@ionic-native/file/ngx';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -12,8 +13,11 @@ import { homePageRoutingModule } from './home-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    homePageRoutingModule
+    homePageRoutingModule,
   ],
-  declarations: [homePage]
+  declarations: [homePage],
+  providers: [
+    File
+  ]
 })
 export class homePageModule {}
