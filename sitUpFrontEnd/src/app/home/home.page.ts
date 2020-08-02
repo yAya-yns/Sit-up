@@ -60,7 +60,6 @@ export class homePage implements OnInit {
   ngOnInit() {
     this.generateImageName('giphy', 24);
     showImageInVideo(this.imageNames, 0)
-    // this.showImageLikeVideo(0)
   }
 
   startCameraAbove() {
@@ -134,29 +133,7 @@ export class homePage implements OnInit {
     }
   }
 
-  showImageLikeVideo(i) {
-    const images = ["giphy-0.jpg", "giphy-1.jpg", "giphy-2.jpg", "giphy-3.jpg", "giphy-4.jpg", "giphy-5.jpg", "giphy-6.jpg", "giphy-7.jpg", "giphy-8.jpg", "giphy-9.jpg", "giphy-10.jpg", "giphy-11.jpg", "giphy-12.jpg", "giphy-13.jpg", "giphy-14.jpg", "giphy-15.jpg", "giphy-16.jpg", "giphy-17.jpg", "giphy-18.jpg", "giphy-19.jpg", "giphy-20.jpg", "giphy-21.jpg", "giphy-22.jpg", "giphy-23.jpg"];
-    if (i < images.length) {
-      console.log(images)
-      document.getElementById('video').style.background = "url('../../assets/giphy-0/" + images[i] + "')";
-      setTimeout(this.showImageLikeVideo.bind(null, i+1), 300)
-    }
-  }
 
-  // showImageLikeVideo(i) {
-  //   setTimeout(() => {
-  //     document.getElementById('video').style.background = "url('../../assets/giphy-0/" + this.imageNames[i] + "')";
-  //   }, 3000);
-
-  //   // while (i < this.imageNames.length) {
-  //   //   console.log(i)
-  //   //   setTimeout(() => {
-  //   //     document.getElementById('video').style.background = "url('../../assets/giphy-0/" + this.imageNames[i] + "')";
-  //   //   }, 3000);
-  //   //   i++;
-  //   // }
-  // }
-  
 }
 
 function showImageInVideo(images, i) {
