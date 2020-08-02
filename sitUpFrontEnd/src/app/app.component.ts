@@ -27,7 +27,7 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       if (this.first_time){
-        this.router.navigateByUrl('land-in');
+        // this.router.navigateByUrl('land-in');
         // this.router.navigateByUrl('tabs');
         this.first_time = false;
       }
