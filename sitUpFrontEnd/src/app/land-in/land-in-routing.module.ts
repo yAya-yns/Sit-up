@@ -16,12 +16,12 @@ const routes: Routes = [
   //   component: TabsPage,
   //   children: [
   //     {
-  //       path: 'tab1',
-  //       loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+  //       path: 'home',
+  //       loadChildren: () => import('../home/home.module').then(m => m.homePageModule)
   //     },
   //     {
-  //       path: 'tab2',
-  //       loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+  //       path: 'home',
+  //       loadChildren: () => import('../home/home.module').then(m => m.homePageModule)
   //     },
   //     {
   //       path: 'tab3',
@@ -29,14 +29,14 @@ const routes: Routes = [
   //     },
   //     {
   //       path: '',
-  //       redirectTo: '/tabs/tab1',
+  //       redirectTo: '/tabs/home',
   //       pathMatch: 'full'
   //     }
   //   ]
   // },
   // {
   //   path: 'tabs',
-  //   redirectTo: '/tabs/tab1',
+  //   redirectTo: '/tabs/home',
   //   pathMatch: 'full'
   // }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { Tab1Page } from '../tab1/tab1.page';
+import { homePage } from '../home/home.page';
 import { Router } from '@angular/router';
 
 @Component({
