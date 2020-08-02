@@ -38,7 +38,7 @@ export class Tab1Page implements OnInit {
     disableExifHeaderStripping: false };
   photo: SafeResourceUrl;
 
-
+  
   // async takePicture() {
   //   const image = await Plugins.Camera.getPhoto({
   //     quality: 100,
