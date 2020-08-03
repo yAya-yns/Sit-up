@@ -1,21 +1,21 @@
-<ion-content [fullcreen]="true">
+<ion-content >
   <!-- today best -->
-  <ion-row class="top">
+  <ion-row class="top middle">
     <ion-card class="todaysBest">
-      <ion-card-header>
-        <ion-card-title>Today's Best Record</ion-card-title>
+      <ion-card-header >
+        <ion-card-title class="bestHeader wcenter">Recording</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <h1 class="middle time">10:00</h1>
+        <h1 class="middle time">10:00 <span style="font-size: 12px;">Mins</span></h1>
       </ion-card-content>
     </ion-card>
   </ion-row>
 
   <!-- today's timeline or barchat-->
-  <ion-row>
-    <ion-card>
+  <ion-row class="todayRow middle">
+    <ion-card class="todayCard">
       <ion-card-header>
-        Today's Summary
+        <ion-card-title class="wcenter" style="font-weight: bold;">Today's Summary</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <canvas #doughnutCanvas></canvas>
@@ -23,12 +23,12 @@
     </ion-card>
 
   </ion-row>
-
+  <ion-row style="background-color: #fff;"></ion-row>
   <!-- weekly analysis -->
-  <ion-row>
+  <ion-row class="middle">
     <ion-card>
       <ion-card-header>
-        Weekly Analysis
+        <ion-card-title class="wcenter" style="font-weight: bold;">Weekly Analysis</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <canvas #lineCanvas></canvas>

@@ -64,7 +64,7 @@ export class homePage implements OnInit {
   startCameraAbove() {
 
     this.connected = true;
-    console.log(document.getElementById("video"))
+    this.generateImageName('giphy', 24);
     showImageInVideo(this.imageNames, 0)
     // this.cameraPreview.startCamera(this.cameraPreviewOpts);
     // this.isToBack = false;
