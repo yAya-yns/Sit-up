@@ -25,6 +25,7 @@ export class homePage implements OnInit {
   flashMode = 'off';
   isToBack = false;
   imageNames = [];
+  connected = false;
   
 
   constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File) {
@@ -58,14 +59,16 @@ export class homePage implements OnInit {
   //   this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
   // }
   ngOnInit() {
-    this.generateImageName('giphy', 24);
-    showImageInVideo(this.imageNames, 0)
   }
 
   startCameraAbove() {
 
-    this.cameraPreview.startCamera(this.cameraPreviewOpts);
-    this.isToBack = false;
+    this.connected = true;
+    console.log(document.getElementById("video"))
+    this.generateImageName('giphy', 24);
+    showImageInVideo(this.imageNames, 0)
+    // this.cameraPreview.startCamera(this.cameraPreviewOpts);
+    // this.isToBack = false;
     // this.cameraPreview.stopCamera().then(() => {
     //   this.isToBack = false;
 
@@ -138,7 +141,6 @@ export class homePage implements OnInit {
 
 function showImageInVideo(images, i) {
   if (i < images.length) {
-    console.log(images)
     document.getElementById('video').style.background = "url('../../assets/giphy-0/" + images[i] + "')";
     setTimeout(showImageInVideo.bind(null,images, i+1), 300)
   }
