@@ -26,3 +26,25 @@ button {
     position: relative;
     transform: translate(0, -50%);
 }
+
+.fit-parent{
+    font-size: 30vw;
+    height: fit-content;
+    width: fit-content;
+}
+
+ion-button{
+    --border-radius: 50%;
+}
+ion-content{
+    --ion-background-color: #a3e1dc;
+}
+
+ion-card{
+    --ion-background-color: white;
+}
+.bottom{
+    position: relative;
+    bottom: 0;
+    height: fit-content;
+}

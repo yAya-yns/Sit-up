@@ -1,27 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <!-- <ion-toolbar>
     <ion-title class="center">
       Sit-Up!
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar> -->
 </ion-header>
 
-<ion-content [fullscreen]="true" [ngClass]="{'custom-ion-content': isToBack}">
+<ion-content class="home" [fullscreen]="true" [ngClass]="{'custom-ion-content': isToBack}">
 
   <ion-grid>
 
     <ion-row class="center icon">
-      <ion-col>
+      <!-- <ion-col>
         <ion-icon color="success" name="sunny-outline" isActive=true></ion-icon> <span color="success">Right</span>
-      </ion-col>
+      </ion-col> -->
       <!-- <ion-col>
         <ion-button (click)="switchCamera()" fill="clear" color="medium">
           <ion-icon name="sync-circle-outline"> </ion-icon> <span>Switch</span>
         </ion-button>
       </ion-col> -->
-      <ion-col>
+      <!-- <ion-col>
         <ion-icon color="danger" name="sunny-outline"></ion-icon> <span color="danger">Wrong</span>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
 
     <ion-row>
@@ -30,19 +30,27 @@
           <ion-card-content class="window">
 
             <div class="wcenter" *ngIf="!connected">
-              <ion-button (click)="startCameraAbove()" shape="round" color="green">
-                <ion-icon slot="start" name="arrow-forward-circle" color="light"></ion-icon>Connect
-              </ion-button>
-              <ion-button shape="round" color="pink" (click)="stopCamera()">Disconnect</ion-button>
-            </div>
-            <canvas id="video" style="width: 100%; height: 80%;">hi</canvas>
 
+              <ion-button (click)="startCameraAbove()" shape="round" color="green" class="fit-parent">
+                <!-- <ion-icon slot="start" name="arrow-forward-circle" color="light"></ion-icon> -->
+                <ion-icon name="power-outline"></ion-icon>
+                <!-- Connect -->
+              </ion-button>
+              <!-- <ion-icon src="assets/icon/start.svg" class="fit-parent" color="success"></ion-icon> -->
+            </div>
+
+            <canvas id="video" style="width: 100%; height: 95%;" ></canvas>
+            <div  class="bottom" *ngIf="connected">
+              <ion-col>
+                <ion-icon color="success" name="sunny-outline" isActive=true></ion-icon> <span color="success">Right</span>
+              </ion-col>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row *ngIf="connected">
       <ion-col>
         <ion-card class="center">
           <ion-text color="green">
@@ -61,17 +69,16 @@
       </ion-col>
     </ion-row>
 
-    <ion-row> <br> </ion-row>
+    <!-- <ion-row> <br> </ion-row>
     <ion-row>
       <ion-button class="center" shape="round" color="success" (click)="takePicture()" color="green">Set A Goal!
       </ion-button>
-    </ion-row>
-    <ion-row> <br> </ion-row>
-    <!-- <ion-row>
-      <ion-text color="blue" class="center">
+    </ion-row> -->
+    <ion-row>
+      <ion-text id="msg" color="green" class="center">
         Keep Going!
       </ion-text>
-    </ion-row> -->
+    </ion-row>
 
 
   </ion-grid>

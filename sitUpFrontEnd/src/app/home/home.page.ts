@@ -65,13 +65,11 @@ export class homePage implements OnInit {
 
     this.connected = true;
     console.log(document.getElementById("video"))
-    this.generateImageName('giphy', 24);
     showImageInVideo(this.imageNames, 0)
     // this.cameraPreview.startCamera(this.cameraPreviewOpts);
     // this.isToBack = false;
     // this.cameraPreview.stopCamera().then(() => {
     //   this.isToBack = false;
-
     // })
   }
 
@@ -143,5 +141,7 @@ function showImageInVideo(images, i) {
   if (i < images.length) {
     document.getElementById('video').style.background = "url('../../assets/giphy-0/" + images[i] + "')";
     setTimeout(showImageInVideo.bind(null,images, i+1), 300)
+  }else{
+    document.getElementById('video').style.background = "";
   }
 }
