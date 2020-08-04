@@ -5,7 +5,7 @@ import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, Camer
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { File } from '@ionic-native/file/ngx';
-
+// import { VideoPlayer } from '@ionic-native/video-player/ngx';
  
 
 @Component({
@@ -26,6 +26,7 @@ export class homePage implements OnInit {
   isToBack = false;
   imageNames = [];
   connected = false;
+  correct = true;
   
 
   constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File) {
@@ -61,6 +62,13 @@ export class homePage implements OnInit {
   ngOnInit() {
   }
 
+  // playVideo(){
+  //   this.videoPlayer.play('assets/video/1.mp4').then(() => {
+  //   console.log('video completed');
+  //   }).catch(err => {
+  //   console.log(err);
+  //   });
+  // }
   startCameraAbove() {
 
     this.connected = true;

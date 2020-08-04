@@ -23,8 +23,9 @@ button {
     text-align: center;
     margin: auto;
     top: 50%;
+    left: 50%;
     position: relative;
-    transform: translate(0, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .fit-parent{
@@ -34,17 +35,22 @@ button {
 }
 
 ion-button{
-    --border-radius: 50%;
+    --border-radius: 100%;
 }
 ion-content{
-    --ion-background-color: #a3e1dc;
+    // --ion-background-color: #a3e1dc;
+    --ion-background-color: linear-gradient(45deg, #439895 0%, #59bda3 33.3%, #a3e1dc 100%) !important;
+    
 }
 
 ion-card{
-    --ion-background-color: white;
+    --ion-background-color: #ffffffdc;
 }
 .bottom{
     position: relative;
     bottom: 0;
     height: fit-content;
+}
+.score{
+    padding: 2px;
 }
