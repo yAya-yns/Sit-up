@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <!-- <ion-toolbar>
+    <ion-title class="center">
+      Sit-Up!
+    </ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="home" [fullscreen]="true" [ngClass]="{'custom-ion-content': isToBack}">
+
+  <ion-grid>
+
+    <ion-row class="center icon">
+      <!-- <ion-col>
+        <ion-icon color="success" name="sunny-outline" isActive=true></ion-icon> <span color="success">Right</span>
+      </ion-col> -->
+      <!-- <ion-col>
+        <ion-button (click)="switchCamera()" fill="clear" color="medium">
+          <ion-icon name="sync-circle-outline"> </ion-icon> <span>Switch</span>
+        </ion-button>
+      </ion-col> -->
+      <!-- <ion-col>
+        <ion-icon color="danger" name="sunny-outline"></ion-icon> <span color="danger">Wrong</span>
+      </ion-col> -->
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content class="window">
+
+            <div class="wcenter" *ngIf="!connected">
+                <ion-button  (click)="startCameraAbove()" shape="round" color="green" class="fit-parent" fill="clear">
+                  <!-- <ion-icon slot="start" name="arrow-forward-circle" color="light"></ion-icon> -->
+                  <!-- <ion-icon name="power-outline"></ion-icon> -->
+                  <!-- Connect -->
+                  <ion-icon src="assets/icon/Asset.svg"></ion-icon>
+
+                </ion-button>
+            </div>
+            <div *ngIf="connected">
+              <video width="100%" autoplay controls muted preload>
+                <source src="../../assets/video/1.mp4" type="video/mp4">
+                Your device does not support the video player
+              </video>
+            </div>
+            <!-- <canvas id="video" style="width: 100%; height: 95%;" ></canvas> -->
+            <div  class="bottom" *ngIf="connected">
+              <div *ngIf="correct"><ion-icon  color="success" name="sunny-outline" isActive=true>Right</ion-icon> <span color="success">Right</span></div>
+              <div *ngIf="!correct"><ion-icon  color="danger" name="sunny-outline" isActive=true>Wrong</ion-icon> <span color="danger">Wrong</span></div>
+              
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngIf="connected">
+      <ion-col>
+        <ion-card class="center score" >
+          <ion-text color="green">
+            Correct Posture Time <br>
+          </ion-text>
+          <span class="center" style="font-size: large;"> 0 </span><span style="font-size: small;">min</span>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="center score">
+          <ion-text color="pink">
+            Wrong Posture Time <br>
+          </ion-text>
+          <span class="center" style="font-size: large;"> 0 </span><span style="font-size: small;">min</span>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row> <br> </ion-row>
+    <ion-row>
+      <ion-button class="center" shape="round" color="success" (click)="takePicture()" color="green">Set A Goal!
+      </ion-button>
+    </ion-row> -->
+    <ion-row *ngIf="connected">
+      <ion-text id="msg" color="white" class="center" style="font-size: small;">
+        Good Job! Keep going!
+      </ion-text>
+    </ion-row>
+    <ion-row *ngIf="!connected">
+      <ion-text id="msg" color="white" class="center" style="font-size:initial">
+        Press The Button To Start!
+      </ion-text>
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>
