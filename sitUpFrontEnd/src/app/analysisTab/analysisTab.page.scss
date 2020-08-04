@@ -55,3 +55,9 @@ ion-row {
 .todayCard{
     height: 245px;
 }
+
+.centerText {
+    position: absolute;
+    transform: translate(155px, 83px);
+    font-size: 24px;
+}

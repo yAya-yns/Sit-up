@@ -18,10 +18,10 @@ export class analysisTabPage implements OnInit{
 
   ngOnInit() {
 
+    
   }
 
   ngAfterViewInit() {
-
     this.pieChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
@@ -40,6 +40,7 @@ export class analysisTabPage implements OnInit{
       }
     });
 
+  
 
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: "line",
