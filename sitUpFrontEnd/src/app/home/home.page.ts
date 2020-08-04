@@ -5,7 +5,7 @@ import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, Camer
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { File } from '@ionic-native/file/ngx';
-
+// import { VideoPlayer } from '@ionic-native/video-player/ngx';
  
 
 @Component({
@@ -26,6 +26,7 @@ export class homePage implements OnInit {
   isToBack = false;
   imageNames = [];
   connected = false;
+  correct = true;
   
 
   constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File) {
@@ -61,6 +62,13 @@ export class homePage implements OnInit {
   ngOnInit() {
   }
 
+  // playVideo(){
+  //   this.videoPlayer.play('assets/video/1.mp4').then(() => {
+  //   console.log('video completed');
+  //   }).catch(err => {
+  //   console.log(err);
+  //   });
+  // }
   startCameraAbove() {
 
     this.connected = true;
@@ -70,7 +78,6 @@ export class homePage implements OnInit {
     // this.isToBack = false;
     // this.cameraPreview.stopCamera().then(() => {
     //   this.isToBack = false;
-
     // })
   }
 
@@ -142,5 +149,7 @@ function showImageInVideo(images, i) {
   if (i < images.length) {
     document.getElementById('video').style.background = "url('../../assets/giphy-0/" + images[i] + "')";
     setTimeout(showImageInVideo.bind(null,images, i+1), 300)
+  }else{
+    document.getElementById('video').style.background = "";
   }
 }
