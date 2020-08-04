@@ -39,3 +39,12 @@
     position: relative;
     transform: translate(0, -50%);
 }
+ion-content{
+    // --ion-background-color: #a3e1dc;
+    --ion-background-color: linear-gradient(45deg, #439895 0%, #59bda3 33.3%, #a3e1dc 100%) !important;
+    
+}
+
+ion-card{
+    --ion-background-color: #ffffffdc;
+}

@@ -1,20 +1,20 @@
 .top{
     margin-top: 10%;
     margin-bottom: 5%;
-    background-color: var(--ion-color-three);
+    // background-color: var(--ion-color-three);
 }
 
 .todaysBest{
     width: 100%;
     border-radius: 4px;
     margin: 0;
-    background-color: var(--ion-color-three);
-    color: #fff;
+    // background-color: var(--ion-color-three);
+    // color: #fff;
     box-shadow: none;
 }
 
 .bestHeader {
-    color: #fff;
+    // color: #fff;
 
 }
 
@@ -30,12 +30,12 @@
 
 ion-card{
     width: 96%;
-    background-color: #ffffff;
+    background-color: #fffffff1;
 }
 
-// ion-row {
+ion-row {
 //     background-color: var(--ion-color-four);
-// }
+}
 
 ion-content {
     background-color: var(--ion-color-three);
@@ -45,7 +45,7 @@ ion-content {
 
 ion-row {
     width: 96%;
-    background-color: #fff;
+    // background-color: #fff;
 }
 
 .todayRow {
