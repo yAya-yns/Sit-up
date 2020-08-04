@@ -143,6 +143,7 @@ export class homePage implements OnInit {
   }
 
 
+
 }
 
 function showImageInVideo(images, i) {
@@ -153,3 +154,4 @@ function showImageInVideo(images, i) {
     document.getElementById('video').style.background = "";
   }
 }
+
