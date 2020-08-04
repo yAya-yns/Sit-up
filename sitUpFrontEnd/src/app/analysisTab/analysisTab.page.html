@@ -1,0 +1,39 @@
+<ion-content >
+  <!-- today best -->
+  <ion-row class="top middle">
+    <ion-card class="todaysBest">
+      <ion-card-header >
+        <ion-card-title class="wcenter">Recording</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h1 class="middle time">10:00<span style="font-size: 12px;">Mins</span></h1>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <!-- today's timeline or barchat-->
+  <ion-row class="todayRow middle">
+    <ion-card class="todayCard">
+      <ion-card-header>
+        <ion-card-title class="wcenter" style="font-weight: bold;">Today's Summary</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <span class="centerText">xx%</span>
+        <canvas #doughnutCanvas id="doughnutCanvas"></canvas>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-row>
+  <ion-row ></ion-row>
+  <!-- weekly analysis -->
+  <ion-row class="middle">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="wcenter" style="font-weight: bold;">Weekly Analysis</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+</ion-content>
