@@ -13,7 +13,7 @@ $ ./flaskApi/bin/activate
 $ flaskApi\Scripts\activate
 $ pip install -r requirements.txt
 
-cd app
+$ cd app
 (linux or mac)
 $ export FLASK_APP=main.py
 (windows)
