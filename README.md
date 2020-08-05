@@ -1,5 +1,5 @@
 # Sit-up!
-Temp Discription: Repository for ADA Innovation Fair 2020
+The personalized AI posture practitioner for everyone
 
 # AI module
 Use tf-pose-estimation
