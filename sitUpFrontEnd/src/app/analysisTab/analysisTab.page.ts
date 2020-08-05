@@ -17,7 +17,6 @@ export class analysisTabPage implements OnInit{
   constructor() {}
 
   ngOnInit() {
-
     
   }
 
