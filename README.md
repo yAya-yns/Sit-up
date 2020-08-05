@@ -1,6 +1,14 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
+# Run the App on your browser
+make sure you installed [ionic](https://ionicframework.com/docs/intro/cli)
+```bash
+cd SitUpFrontEnd 
+npm i
+ionic serve
+```
+
 # AI module
 Use tf-pose-estimation
 
