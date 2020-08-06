@@ -22,6 +22,8 @@ For download of dependencies, refer to https://medium.com/@gsethi2409/pose-estim
 For download of dependencies, refer to https://github.com/satyaborg/pose-estimation-detection;
 
 ### Step2: 
+```mkdir result```
+
 Move sit-up.py and sit_analysis.py to the folder "tf-pose-estimation"(For mac users)/"pose-estimation-detection"(for windows users) which should be downloaded after step 1;
 
 ### Step3: 
