@@ -1,3 +1,4 @@
+import { TfposeService } from './../tfpose.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
@@ -29,7 +30,7 @@ export class homePage implements OnInit {
   correct = true;
   
 
-  constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File) {
+  constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File, private pose: TfposeService) {
   }
   
   cameraPreviewOpts: CameraPreviewOptions = {
@@ -72,6 +73,13 @@ export class homePage implements OnInit {
   startCameraAbove() {
 
     this.connected = true;
+    this.pose.call().subscribe(
+      (ret) => {
+        console.log('success')
+      }, (err) => {
+        console.log(err)
+      }
+    )
     // this.generateImageName('giphy', 24);
     // showImageInVideo(this.imageNames, 0)
     // this.cameraPreview.startCamera(this.cameraPreviewOpts);
