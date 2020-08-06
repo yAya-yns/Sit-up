@@ -41,10 +41,16 @@ if __name__ == '__main__':
 
     logger.debug('initialization %s : %s' % (args.model, get_graph_path(args.model)))
     w, h = model_wh(args.resize)
-    if w > 0 and h > 0:
-        e = TfPoseEstimator(get_graph_path(args.model), target_size=(w, h), trt_bool=str2bool(args.tensorrt))
+     if w > 0 and h > 0:
+        if args.os == "macos":
+            e = TfPoseEstimator(get_graph_path(args.model), target_size=(w, h), trt_bool=str2bool(args.tensorrt))
+        else:
+            e = TfPoseEstimator(get_graph_path(args.model), target_size=(w, h))
     else:
-        e = TfPoseEstimator(get_graph_path(args.model), target_size=(432, 368), trt_bool=str2bool(args.tensorrt))
+        if args.os == "macos":
+            e = TfPoseEstimator(get_graph_path(args.model), target_size=(432, 368), trt_bool=str2bool(args.tensorrt))
+        else:
+            e = TfPoseEstimator(get_graph_path(args.model), target_size=(432, 368))
     logger.debug('cam read+')
     cam = cv2.VideoCapture(args.camera)
     ret_val, image = cam.read()
