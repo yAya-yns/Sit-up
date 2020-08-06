@@ -12,14 +12,18 @@ ionic serve
 # AI module
 Use tf-pose-estimation
 
-### Step1: 
+### Step1(For Mac Users): 
 For download of dependencies, refer to https://medium.com/@gsethi2409/pose-estimation-with-tensorflow-2-0-a51162c095ba;
 
+### Step1(For Windows Users):
+For download of dependencies, refer to https://github.com/satyaborg/pose-estimation-detection;
+
 ### Step2: 
-Add sit-up.py to the folder "tf-pose-estimation" which should be downloaded after step 1;
+Add sit-up.py and sit_analysis.py to the folder "tf-pose-estimation"(For mac users)/"pose-estimation-detection"(for windows users) which should be downloaded after step 1;
 
 ### Step3: 
-run with webcamera: ```python sit-up.py --model=mobilenet_thin --resize=432x368 --camera=0```
+For mac users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --os=macos --resize=432x368 --camera=0```;
+For windows users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --resize=432x368 --camera=0``` or ```python sit-up.py os=windows --model=mobilenet_thin --resize=432x368 --camera=0```
 
 
 # Flask
