@@ -17,7 +17,6 @@ export class analysisTabPage implements OnInit{
   constructor() {}
 
   ngOnInit() {
-
     
   }
 
@@ -34,9 +33,14 @@ export class analysisTabPage implements OnInit{
               "rgba(255, 99, 132, 0.5)",
               "rgba(75, 192, 100, 0.5)"
             ],
-            hoverBackgroundColor: ["#FF6384", "#36A2EB"]
+            hoverBackgroundColor: ["#FF6384", "#36A2EB"],
+            
           }
         ]
+      },
+      options: {
+        percentageInnerCutout: 10,
+        cutoutPercentage: 65
       }
     });
 
