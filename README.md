@@ -26,7 +26,7 @@ For mac users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --
 
 For windows users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --resize=432x368 --camera=0```; or 
 
-For windows users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --os=windows --resize=432x368 --camera=0```;
+```python sit-up.py --model=mobilenet_thin --os=windows --resize=432x368 --camera=0```;
 
 # Flask
 ## requirement 
