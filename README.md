@@ -22,11 +22,13 @@ For download of dependencies, refer to https://github.com/satyaborg/pose-estimat
 Add sit-up.py and sit_analysis.py to the folder "tf-pose-estimation"(For mac users)/"pose-estimation-detection"(for windows users) which should be downloaded after step 1;
 
 ### Step3: 
-For mac users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --os=macos --resize=432x368 --camera=0```;
+Simple test! run with webcamera: (for mac users): ```python sit-up.py --os=macos --direction=front``` or 
 
-For windows users: run with webcamera: ```python sit-up.py --model=mobilenet_thin --resize=432x368 --camera=0```; or 
+(for windows users): ```python sit-up.py --os=windows --direction=front```
 
-```python sit-up.py --model=mobilenet_thin --os=windows --resize=432x368 --camera=0```;
+For the argument direction, you can choose front, side45 or side90. 
+
+Note when specifying side45, for the purpose of accuracy, please make sure camera is at 45 angle of your front.
 
 # Flask
 ## requirement 
