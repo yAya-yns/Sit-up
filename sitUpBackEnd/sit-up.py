@@ -4,6 +4,7 @@ import time
 
 import cv2
 import numpy as np
+import os
 
 from tf_pose.estimator import TfPoseEstimator
 from tf_pose.networks import get_graph_path, model_wh
@@ -40,6 +41,7 @@ if __name__ == '__main__':
                         help='for tensorrt process.')
     parser.add_argument('--os', type=str, default='windows', help='please enter windows or mac, windows as default')
     parser.add_argument('--direction', type=str, default='front', help='please specify your direction, front, side45, or side90')
+    parser.add_argument('--display', type=str, default='True', help='set to be True if you want to display your result, else False')
     args = parser.parse_args()
 
     logger.debug('initialization %s : %s' % (args.model, get_graph_path(args.model)))
@@ -91,8 +93,11 @@ if __name__ == '__main__':
             for message in messages:
                 cv2.putText(image, message, (10, y_value),  cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
                 y_value += 30
-
-        cv2.imshow('tf-pose-estimation result', image)
+        if args.display:
+            cv2.imshow('tf-pose-estimation result', image)
+        else:
+            path = r'./result'
+            cv2.imwrite(os.path.join(path, 'result'+str(i)+'.png'), image)
         messages = []
         if cv2.waitKey(1) == 27:
             break
