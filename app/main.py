@@ -2,18 +2,32 @@ from flask import (Flask,json, request, Response)
 from flask_cors import CORS, cross_origin
 from api import tfpose
 
+import multiprocessing
+
 app = Flask(__name__)
 cors = CORS(app)
 
+thread = None
 
-@app.route('/ping')
-@cross_origin
-def ping():
-    return Response(json.dumps({'msg': 'pong'}), 200, mimetype=MIMETYPE['json'])
 
 @app.route('/calltfpose')
 @cross_origin()
 def call_tfpose():
+    global thread
+    thread = multiprocessing.Process(target=sit_up.analysis, args=())
+    thread.start()
     status, msg = tfpose.call_tfpose()
-    # place-holder return 
+    # place-holder return
     return Response(json.dumps({'msg': msg}), status)
+
+@app.route('/close')
+def close():
+    if thread:
+        thread.terminate()
+        thread.join()
+        return Response(json.dumps({'msg': "closed"}), 200)
+    else:
+        return Response(json.dumps({'msg': "nothing to close"}), 200)
+
+if __name__ == '__main__':
+    app.run(debug=True)
