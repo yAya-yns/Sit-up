@@ -109,4 +109,4 @@ if __name__ == '__main__':
     w, h = model_wh(args.resize)
     display = args.display == "True"
 
-    analysis(args.resize, args.resize_out_ratio, args.tensorrt, args.os, args.direction, display, w, h, args.camera)
+    analysis(args.resize, args.model, args.resize_out_ratio, args.tensorrt, args.os, args.direction, display, w, h, args.camera)
