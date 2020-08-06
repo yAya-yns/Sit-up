@@ -43,6 +43,10 @@
                 <source src="../../assets/video/1.mp4" type="video/mp4">
                 Your device does not support the video player
               </video> -->
+              <img src="{{image}}" alt="">
+              <ion-button (click)="stopCamera()"  fill="clear" style="position: fixed; top: 0em; right: 0px; transform: translate(20%, 0%); font-size: 1.5em;">
+                <ion-icon  name="close-circle-sharp" color="pink"></ion-icon>
+              </ion-button>
             </div>
             <!-- <canvas id="video" style="width: 100%; height: 95%;" ></canvas> -->
             <div  class="bottom" *ngIf="connected">

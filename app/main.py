@@ -1,5 +1,6 @@
 from flask import (Flask,json, request, Response)
 from flask_cors import CORS, cross_origin
+from flask import send_file
 from api import tfpose
 
 import multiprocessing
@@ -28,6 +29,11 @@ def close():
         return Response(json.dumps({'msg': "closed"}), 200)
     else:
         return Response(json.dumps({'msg': "nothing to close"}), 200)
+
+@app.route('/img')
+def img():
+    filename = sit_up.get_path()
+    return send_file(filename, mimetype='image/gif')
 
 if __name__ == '__main__':
     app.run(debug=True)

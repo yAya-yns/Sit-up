@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://127.0.0.1:5000/calltfpose'
+  endpoint: 'http://127.0.0.1:5000/calltfpose',
+  img: 'http://127.0.0.1:5000/img',
+  close: 'http://127.0.0.1:5000/close'
 };
 
 /*

@@ -28,6 +28,7 @@ export class homePage implements OnInit {
   imageNames = [];
   connected = false;
   correct = true;
+  img: any;
   
 
   constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File, private pose: TfposeService) {
@@ -80,6 +81,14 @@ export class homePage implements OnInit {
         console.log(err)
       }
     )
+    this.pose.img().subscribe(
+      (ret) => {
+        this.img = ret
+        console.log('success')
+      }, (err) => {
+        console.log(err)
+      }
+    )
     // this.generateImageName('giphy', 24);
     // showImageInVideo(this.imageNames, 0)
     // this.cameraPreview.startCamera(this.cameraPreviewOpts);
@@ -96,7 +105,14 @@ export class homePage implements OnInit {
     })
   }
   stopCamera() {
-    this.cameraPreview.stopCamera();
+    this.connected = false;
+    this.pose.close().subscribe(
+      (ret) => {
+        console.log('success')
+      }, (err) => {
+        console.log(err)
+      }
+    )
   }
 
   takePicture() {

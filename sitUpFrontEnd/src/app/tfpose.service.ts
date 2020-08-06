@@ -18,5 +18,23 @@ export class TfposeService {
       {headers}
     )
   }
+  img() {
+    let headers = new HttpHeaders();
+    headers = headers.append('Accept', '*/*');
+
+    return this.http.get(
+      environment.img,
+      {headers}
+    )
+  }
+  close() {
+    let headers = new HttpHeaders();
+    headers = headers.append('Accept', '*/*');
+
+    return this.http.get(
+      environment.close,
+      {headers}
+    )
+  }
 }
 
