@@ -44,7 +44,7 @@ def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, ten
     i=0
     while True:
         ret_val, image = cam.read()
-        humans = e.inference(image, resize_to_default=(w > 0 and h > 0), upsample_size=args.resize_out_ratio)
+        humans = e.inference(image, resize_to_default=(w > 0 and h > 0), upsample_size=resize_out_ratio)
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
 
         # Analysis
