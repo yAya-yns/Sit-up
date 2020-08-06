@@ -10,35 +10,6 @@ const routes: Routes = [
     path: '',
     component: LandInPage
   }
-  // ,
-  // {
-  //   path: 'tabs',
-  //   component: TabsPage,
-  //   children: [
-  //     {
-  //       path: 'home',
-  //       loadChildren: () => import('../home/home.module').then(m => m.homePageModule)
-  //     },
-  //     {
-  //       path: 'home',
-  //       loadChildren: () => import('../home/home.module').then(m => m.homePageModule)
-  //     },
-  //     {
-  //       path: 'tab3',
-  //       loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-  //     },
-  //     {
-  //       path: '',
-  //       redirectTo: '/tabs/home',
-  //       pathMatch: 'full'
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: 'tabs',
-  //   redirectTo: '/tabs/home',
-  //   pathMatch: 'full'
-  // }
 
 ];
 

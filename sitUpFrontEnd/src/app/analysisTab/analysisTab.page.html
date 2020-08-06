@@ -1,21 +1,29 @@
 <ion-content >
   <!-- today best -->
-  <ion-row class="top middle">
+  <!-- <ion-row class="top middle">
     <ion-card class="todaysBest">
       <ion-card-header >
-        <ion-card-title class="wcenter">Recording</ion-card-title>
+        <ion-card-title class="wcenter" style="color: #fff;">Recording</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <h1 class="middle time">10:00<span style="font-size: 12px;">Mins</span></h1>
       </ion-card-content>
     </ion-card>
+  </ion-row> -->
+  <ion-row>
+    <h1 class="middle whiteText"> Recording</h1>
+
+  </ion-row>
+  <ion-row>
+    <h1 class="middle time whiteText">10:00<span style="font-size: 12px;">Mins</span></h1>
+
   </ion-row>
 
   <!-- today's timeline or barchat-->
-  <ion-row class="todayRow middle">
-    <ion-card class="todayCard">
+  <ion-row class="todayRow middle whiteRow">
+    <ion-card class="todayCard whiteBox">
       <ion-card-header>
-        <ion-card-title class="wcenter" style="font-weight: bold;">Today's Summary</ion-card-title>
+        <ion-card-title class="wcenter">Today's Summary</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <span class="centerText">xx%</span>
@@ -26,10 +34,10 @@
   </ion-row>
   <ion-row ></ion-row>
   <!-- weekly analysis -->
-  <ion-row class="middle">
-    <ion-card>
+  <ion-row class="middle whiteRow">
+    <ion-card class="whiteBox">
       <ion-card-header>
-        <ion-card-title class="wcenter" style="font-weight: bold;">Weekly Analysis</ion-card-title>
+        <ion-card-title class="wcenter">Weekly Analysis</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <canvas #lineCanvas></canvas>
