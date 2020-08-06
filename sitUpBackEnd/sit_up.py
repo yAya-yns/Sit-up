@@ -25,14 +25,14 @@ def str2bool(v):
     return v.lower() in ("yes", "true", "t", "1")
 
 
-def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, tensorrt=False, os='windows', direction='front', display=True, w=432, h=368, camera=0, frames=200):
+def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, tensorrt=False, _os='windows', direction='front', display=False, w=432, h=368, camera=0, frames=200):
     if w > 0 and h > 0:
-        if os == "macos":
+        if _os == "macos":
             e = TfPoseEstimator(get_graph_path(model), target_size=(w, h), trt_bool=str2bool(tensorrt))
         else:
             e = TfPoseEstimator(get_graph_path(model), target_size=(w, h))
     else:
-        if os == "macos":
+        if _os == "macos":
             e = TfPoseEstimator(get_graph_path(model), target_size=(432, 368), trt_bool=str2bool(tensorrt))
         else:
             e = TfPoseEstimator(get_graph_path(model), target_size=(432, 368))
@@ -77,13 +77,17 @@ def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, ten
         if display:
             cv2.imshow('tf-pose-estimation result', image)
         else:
-            path = r'../result'
-            cv2.imwrite(os.path.join(path, 'result'+str(i)+'.png'), image)
+            path = r'result'
+            cv2.imwrite(os.path.join(path, 'result1' + '.png'), image)
+            print(os.path.join(path, 'result1' + '.png'))
         i += 1
         if cv2.waitKey(1) == 27:
             break
     cv2.destroyAllWindows()
 
+def get_path():
+    path = r'.//result'
+    return os.path.join(path, 'result1''.png')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='tf-pose-estimation realtime webcam')
