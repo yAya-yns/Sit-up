@@ -3,11 +3,13 @@ class analysis_tool:
     Input a dictionary of <partname, position> and output a list of messages
     Messages are warning messages if the sitting pose is not correct
     Else messages should be only including affirm
+
+   This is for the case where camera is at the 90 degree side of the user
     """
-    
+
     def __init__(self, dic):
         self.dir = dic
-        
+
     # Assumptuib: Nose and Neck should be in self.dir
     # angle between head and vertical line should be smaller than 45 degree
     def _analysis_head_orientation(self, messages):
@@ -17,7 +19,7 @@ class analysis_tool:
             tan = (nosex - neckx) / (nosey - necky)
             if tan > 1.73:
                 messages.append("Please straight up your head ;)")
-        
+
     # Assumption: Neck and (RHip) or (LHip) should be in self.dir
     # angle between back and verticl line should be between 0 to 15 degree
     # Considering detection error, extending the angle to -10 to 20 degree
@@ -31,8 +33,8 @@ class analysis_tool:
             tan = (hipx - neckx) / (necky - hipy)
             if tan < -0.176 or tan > 0.364:
                 messages.append("Please straight up your back ;)")
-    
-    
+
+
     # Asssumption: (LElbow, LWrist, LShoulder) or (RElbow, RWrist, RShoulder) should be in self.dir
     # ELbow angle should be between 90 to 105 degree
     # Considering detection error, extending the angle to 80 to 110 degree
@@ -53,8 +55,8 @@ class analysis_tool:
             cos = dot / (wrist_len * shoulder_len)
             if cos < -0.342 or cos > 0.173:
                 messages.append("Please keep your elbow perpendicular ;)")
-        
-        
+
+
     # Assumption: (LHip, LKnee, LAnkle) or (RHip, RKnee, RAnkle) should be in self.dir
     # Knee angle should be between 90 to 120 degree
     # Considering detection error, extending the angle to 75 to 120 degree
@@ -75,8 +77,8 @@ class analysis_tool:
             cos = dot / (ankle_len * hip_len)
             if cos < -0.573 or cos > 0.258:
                 messages.append("Please keep your knee straight down ;)")
-                
-                
+
+
     # Should be calling this method to do the overall analysis
     def analysis(self):
         messages = []
@@ -114,18 +116,18 @@ class analysis_tool:
         return messages
 
 
-class front_analysis_tool:
+class front_analysis_tool(analysis_tool):
     """
     Input a dictionary of <partname, position> and output a list of messages
     Messages are warning messages if the sitting pose is not correct
     Else messages should be only including affirm
-    
+
     This is for the case where camera is right in front of the user
     """
     def __init__(self, dir):
         self.dir = dir
-        
-        
+
+
     # Assumption: LEar and REar should be in self.dir
     # angle between head and vertical line should be within -15 to 15 degree
     def _analysis_head_orientation(self, messages):
@@ -135,7 +137,7 @@ class front_analysis_tool:
             tan = (ry - ly) / (rx - lx)
             if tan < - 0.15 or tan > 0.15:
                 messages.append("Please keep your head straight ;)")
-                
+
     # Assumption: LShoulder and RShoulder should be in self.dir
     # angle bewteen shoulders and horizontal line should be winthin -10 to 10 degree
     def _analysis_shoulder_orientation(self, messages):
@@ -145,8 +147,8 @@ class front_analysis_tool:
             tan = (ry - ly) / (rx - lx)
             if tan < - 0.15 or tan > 0.15:
                 messages.append("Please keep your shoulder horizontal ;)")
-                
-        
+
+
     # Assumptions: LElbow and LShoulder should be in self.dir
     # angle between elbow and vertical line should be less than 45 degree
     def _analysis_left_elbow(self, messages):
@@ -160,8 +162,8 @@ class front_analysis_tool:
                 messages.append("Please keep your left elbow down")
         else:
             messages.append("Please keep your left elbow down")
-            
-    
+
+
     # Assumptions: RElbow and RShoulder should be in self.dir
     # angle between elbow and vertical line should be less than 45 degree
     def _analysis_left_elbow(self, messages):
@@ -195,6 +197,83 @@ class front_analysis_tool:
         if not "RShoulder" in self.dir:
             messages.append("Could not find your right shoulder :<")
         if "LShoulder" in self.dir and "RShoulder" in self.dir:
+            self._analysis_shoulder_orientation(messages)
+        if len(messages) == 0:
+            messages.append("Nice Sit !!! Keep it up ;)")
+        return messages
+
+
+class side_analysis_tool(analysis_tool):
+    """
+    Input a dictionary of <partname, position> and output a list of messages
+    Messages are warning messages if the sitting pose is not correct
+    Else messages should be only including affirm
+
+    This is for the case where camera is at the 45 degree side of the user
+    """
+    def __init__(self, dir):
+        self.dir = dir
+
+    # Assumption: LEye and REye and Nose and Neck should be in self.dir
+    # angle between head and vertical line should be within 0 to 20 degree
+    def _analysis_head_orientation(self, messages):
+        nosex, nosey = self.dir["Nose"]
+        neckx, necky = self.dir["Neck"]
+        lx, ly = self.dir["LEye"]
+        rx, ry = self.dir["REye"]
+        if lx != rx:
+            if nosex > neckx:
+                # camera is at the right side of the user
+                tan = (ly - ry) / (rx - lx)
+            else:
+                # camera is at the left side of the user
+                tan = (ly - ry) / (lx - rx)
+        if tan < -0.1 or tan > 0.4:
+            messages.append("Please keep your head horizontal ;)")
+
+
+    # Assumption: LShoulder and RShoulder and Nose and Neck should be in self.dir
+    # angle bewteen shoulders and horizontal line should be winthin 10 to 30 degree
+    def _analysis_shoulder_orientation(self, messages):
+        nosex, nosey = self.dir["Nose"]
+        neckx, necky = self.dir["Neck"]
+        lx, ly = self.dir["LShoulder"]
+        rx, ry = self.dir["RShoulder"]
+        if lx != rx:
+            if nosex > neckx:
+                # camera is at the right side of the user
+                tan = (ly - ry) / (rx - lx)
+            else:
+                # camera is at the left side of the user
+                tan = (ly - ry) / (lx - rx)
+            if tan < 0.176 or tan > 0.7:
+                messages.append("Please keep your shoulder horizontal ;)")
+
+
+    # Overall analysis
+    def analysis(self):
+        messages = []
+        # check LEye founded
+        if not "LEye" in self.dir:
+            messages.append("Could not find your left eye :<")
+        # check REye founded
+        if not "REye" in self.dir:
+            messages.append("Could not find your right eye :<")
+        # check Neck founded
+        if not "Neck" in self.dir:
+            messages.append("Could not find your neck :<")
+        # check Nose founded
+        if not "Nose" in self.dir:
+            messages.append("Could not find your nose :<")
+        if "LEye" in self.dir and "REye" in self.dir and "Neck" in self.dir and "Nose" in self.dir:
+            self._analysis_head_orientation(messages)
+        # check left shoulder founded
+        if not "LShoulder" in self.dir:
+            messages.append("Could not find your left shoulder :<")
+        # check right shoulder founded
+        if not "RShoulder" in self.dir:
+            messages.append("Could not find your right shoulder :<")
+        if "LShoulder" in self.dir and "RShoulder" in self.dir and "Neck" in self.dir and "Nose" in self.dir:
             self._analysis_shoulder_orientation(messages)
         if len(messages) == 0:
             messages.append("Nice Sit !!! Keep it up ;)")
