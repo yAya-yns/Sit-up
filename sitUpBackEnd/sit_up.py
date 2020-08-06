@@ -103,7 +103,7 @@ if __name__ == '__main__':
     parser.add_argument('--os', type=str, default='windows', help='please enter windows or mac, windows as default')
     parser.add_argument('--direction', type=str, default='front', help='please specify your direction, front, side45, or side90')
     parser.add_argument('--display', type=str, default='True', help='set to be True if you want to display your result, else False')
-    parser.add_argument('--frames', type=int, default=200, helps'number of frames to run')
+    parser.add_argument('--frames', type=int, default=200, helps='number of frames to run')
     args = parser.parse_args()
 
     logger.debug('initialization %s : %s' % (args.model, get_graph_path(args.model)))
