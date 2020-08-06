@@ -1,0 +1,45 @@
+.custom-ion-content {
+    --background: transparent;
+}
+
+.icon span {
+    font-size: small;
+}
+.ionicon {
+    font-size: large;
+}
+button {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.window {
+    width: 98%;
+    height: 70vh;
+    margin: auto;
+}
+
+.wcenter {
+    text-align: center;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+.fit-parent{
+    font-size: 30vw;
+    height: fit-content;
+    width: fit-content;
+}
+
+
+.bottom{
+    position: relative;
+    bottom: 0;
+    height: fit-content;
+}
+.score{
+    padding: 2px;
+}
