@@ -25,7 +25,7 @@ def str2bool(v):
     return v.lower() in ("yes", "true", "t", "1")
 
 
-def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, tensorrt=False, os='windows', direction='front', display=True, w=432, h=368, camera=0):
+def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, tensorrt=False, os='windows', direction='front', display=True, w=432, h=368, camera=0, frames=200):
     if w > 0 and h > 0:
         if os == "macos":
             e = TfPoseEstimator(get_graph_path(model), target_size=(w, h), trt_bool=str2bool(tensorrt))
@@ -42,7 +42,7 @@ def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, ten
     logger.info('cam image=%dx%d' % (image.shape[1], image.shape[0]))
 
     i=0
-    while True:
+    while i < frames:
         ret_val, image = cam.read()
         humans = e.inference(image, resize_to_default=(w > 0 and h > 0), upsample_size=resize_out_ratio)
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
@@ -103,10 +103,11 @@ if __name__ == '__main__':
     parser.add_argument('--os', type=str, default='windows', help='please enter windows or mac, windows as default')
     parser.add_argument('--direction', type=str, default='front', help='please specify your direction, front, side45, or side90')
     parser.add_argument('--display', type=str, default='True', help='set to be True if you want to display your result, else False')
+    parser.add_argument('--frames', type=int, default=200, helps'number of frames to run')
     args = parser.parse_args()
 
     logger.debug('initialization %s : %s' % (args.model, get_graph_path(args.model)))
     w, h = model_wh(args.resize)
     display = args.display == "True"
 
-    analysis(args.resize, args.model, args.resize_out_ratio, args.tensorrt, args.os, args.direction, display, w, h, args.camera)
+    analysis(args.resize, args.model, args.resize_out_ratio, args.tensorrt, args.os, args.direction, display, w, h, args.camera, args.frames)
