@@ -25,17 +25,17 @@ def str2bool(v):
     return v.lower() in ("yes", "true", "t", "1")
 
 
-def analysis(resize = '432x638', resize_out_ratio=4, tensorrt=False, os='windows', direction='front', display=True, w=432, h=368, camera=0):
+def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, tensorrt=False, os='windows', direction='front', display=True, w=432, h=368, camera=0):
     if w > 0 and h > 0:
         if os == "macos":
-            e = TfPoseEstimator(get_graph_path(args.model), target_size=(w, h), trt_bool=str2bool(tensorrt))
+            e = TfPoseEstimator(get_graph_path(model), target_size=(w, h), trt_bool=str2bool(tensorrt))
         else:
-            e = TfPoseEstimator(get_graph_path(args.model), target_size=(w, h))
+            e = TfPoseEstimator(get_graph_path(model), target_size=(w, h))
     else:
         if os == "macos":
-            e = TfPoseEstimator(get_graph_path(args.model), target_size=(432, 368), trt_bool=str2bool(tensorrt))
+            e = TfPoseEstimator(get_graph_path(model), target_size=(432, 368), trt_bool=str2bool(tensorrt))
         else:
-            e = TfPoseEstimator(get_graph_path(args.model), target_size=(432, 368))
+            e = TfPoseEstimator(get_graph_path(model), target_size=(432, 368))
     logger.debug('cam read+')
     cam = cv2.VideoCapture(camera)
     ret_val, image = cam.read()
