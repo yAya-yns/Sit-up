@@ -96,7 +96,7 @@ if __name__ == '__main__':
         if args.display:
             cv2.imshow('tf-pose-estimation result', image)
         else:
-            path = r'./result'
+            path = r'./images'
             cv2.imwrite(os.path.join(path, 'result'+str(i)+'.png'), image)
         messages = []
         if cv2.waitKey(1) == 27:
