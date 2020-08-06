@@ -12,7 +12,7 @@ for file in sorted(glob.glob('./result/*.png'), key=os.path.getmtime):
     size = (width, height)
     img_array.append(img)
 
-out = cv2.VideoWriter('result.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 35.0, size)
+out = cv2.VideoWriter('../sitUpFrontEnd/src/assets/video/result.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 35.0, size)
 
 for i in range(len(img_array)):
     out.write(img_array[i])
