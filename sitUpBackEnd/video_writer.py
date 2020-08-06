@@ -6,7 +6,7 @@ import os
 img_array = []
 i = 0
 size = 0,0
-for file in sorted(glob.glob('./result/*.png'), key=os.path.getmtime):
+for file in sorted(glob.glob('../result/*.png'), key=os.path.getmtime):
     img = cv2.imread(file)
     height, width, layers = img.shape
     size = (width, height)
