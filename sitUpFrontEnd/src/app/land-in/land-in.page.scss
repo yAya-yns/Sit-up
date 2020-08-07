@@ -1,0 +1,24 @@
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    width: 70vw;
+    text-align: center;
+    margin: auto;
+}
+
+.login{
+    margin-top: 5%;
+
+}
+ion-content{
+    --ion-background-color: white;
+    // --ion-background-color: linear-gradient(-45deg, #9bc2c1 0%, #73c2ad 60%, #bee5e4 100%) !important;
+    
+}
+ion-button{
+    // --border-radius: 100%;
+    
+}

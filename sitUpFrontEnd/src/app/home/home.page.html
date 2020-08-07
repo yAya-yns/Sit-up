@@ -1,0 +1,77 @@
+<ion-content class="home" [fullscreen]="true" [ngClass]="{'custom-ion-content': isToBack}">
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content class="window">
+
+            <div class="wcenter" *ngIf="!connected">
+                <ion-button  (click)="startCameraAbove()" shape="round" color="green" class="fit-parent" fill="clear">
+                  <ion-icon src="assets/icon/Asset.svg"></ion-icon>
+
+                </ion-button>
+            </div>
+
+            <!-- <div  class="bottom" *ngIf="connected">
+              <div *ngIf="correct"><ion-icon  color="success" name="sunny-outline" isActive=true>Right</ion-icon> <span color="success">Right</span></div>
+              <div *ngIf="!correct"><ion-icon  color="danger" name="sunny-outline" isActive=true>Wrong</ion-icon> <span color="danger">Wrong</span></div>
+            </div> -->
+
+            <div *ngIf="connected">
+
+              <!-- this is for demo -->
+              <video width="100%"  autoplay preload  [muted]="'muted'">
+                <source src={{img}}>
+                Your device does not support the video player
+              </video>
+
+              <!-- in real situation -->
+              <!-- <img src="http://127.0.0.1:5000/video_feed" alt="not connected"> -->
+              <!-- <img src={{img}} alt=""> -->
+              <ion-button (click)="stopCamera()"  fill="clear" style="position: fixed; top: 0em; right: 0px; transform: translate(20%, 0%); font-size: 1.5em;">
+                <ion-icon  name="close-circle-sharp" color="pink"></ion-icon>
+              </ion-button>
+
+            </div>
+            
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="connected">
+      <!-- score bar -->
+      <ion-col>
+        <ion-card class="center score" >
+          <ion-text color="green">
+            Correct Posture Time <br>
+          </ion-text>
+          <span class="center" style="font-size: large;"> 0 </span><span style="font-size: small;">min</span>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="center score">
+          <ion-text color="pink">
+            Wrong Posture Time <br>
+          </ion-text>
+          <span class="center" style="font-size: large;"> 0 </span><span style="font-size: small;">min</span>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="connected">
+      <!-- massage -->
+      <ion-text id="msg" color="white" class="center" style="font-size: small;">
+        Good Job! Keep going!
+      </ion-text>
+    </ion-row>
+    <ion-row *ngIf="!connected">
+      <ion-text id="msg" color="white" class="center" style="font-size:initial">
+        Press The Button To Start!
+      </ion-text>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,21 @@
+.userIcon {
+    font-size: 80px;
+}
+
+.username {
+    font-weight: bold;
+    padding-left: 5%;
+}
+
+ion-item{
+    font-size: 18px;
+}
+
+.logout{
+    color: red;
+}
+ion-content{
+    --ion-background-color: #fafffe;
+    // --ion-background-color: linear-gradient(0deg, #5fb49e 0%, #69c9af 10%, #a3e1dc 100%) !important;
+    
+}

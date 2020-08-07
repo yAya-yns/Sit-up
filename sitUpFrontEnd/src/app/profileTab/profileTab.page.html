@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true">
+  <ion-row style="margin-top:64px">
+    <ion-col >
+      <ion-avatar class="profileIcon wcenter">
+        <ion-icon name="person-circle-outline" class="userIcon"></ion-icon>      
+      </ion-avatar>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="center">
+      <h1 class="username">Username</h1>
+    </ion-col>
+  </ion-row>
+    <ion-list lines="full">
+      <ion-item>
+        <ion-label>Notification</ion-label>
+        <ion-select value="vibration" okText="Ok" cancelText="Dismiss" style="color: #666666;">
+          <ion-select-option value="sound">Sound</ion-select-option>
+          <ion-select-option value="vibration">Vibration</ion-select-option>
+          <ion-select-option value="mute">Mute</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        About Us
+      </ion-item>
+      <ion-item>
+        Privacy and Term of Service
+      </ion-item>
+      <ion-item>
+        Setting
+      </ion-item>
+      <ion-item class="logout">
+        Log out
+      </ion-item>
+    </ion-list>
+</ion-content>
