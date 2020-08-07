@@ -43,8 +43,8 @@
                 <source src={{img}}>
                 Your device does not support the video player
               </video> -->
-              <img src="http://127.0.0.1:5000/video_feed" alt="not connected">
-              <!-- <img src={{img}} alt=""> -->
+              <!-- <img src="http://127.0.0.1:5000/video_feed" alt="not connected"> -->
+              <img src={{img}} alt="">
               <ion-button (click)="stopCamera()"  fill="clear" style="position: fixed; top: 0em; right: 0px; transform: translate(20%, 0%); font-size: 1.5em;">
                 <ion-icon  name="close-circle-sharp" color="pink"></ion-icon>
               </ion-button>
@@ -59,9 +59,9 @@
         </ion-card>
       </ion-col>
     </ion-row>
-    <ion-button (click)="load()" expand="block" fill="clear" shape="round">
+    <!-- <ion-button (click)="load()" expand="block" fill="clear" shape="round">
       Click me
-    </ion-button>
+    </ion-button> -->
     <ion-row *ngIf="connected">
       <ion-col>
         <ion-card class="center score" >
