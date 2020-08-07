@@ -42,6 +42,8 @@ enjoy the app!
 
 ![demo0](demoPic/demo.png)
 ![demo2](demoPic/demo2.png)
+![demo7](demoPic/demo7.png)
+![demo8](demoPic/demo8.png)
 
 # AI module
 
