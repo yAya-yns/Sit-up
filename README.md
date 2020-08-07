@@ -1,13 +1,14 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
-# Run the App on your browser
+# Try the demo vison of the App on your browser
 make sure you installed [ionic](https://ionicframework.com/docs/intro/cli)
 ```bash
-$ cd SitUpFrontEnd 
+$ cd setUpFrontEnd 
 $ npm i
 $ ionic serve
 ```
+Then go to profile and hit the `demo` button
 
 # AI module
 Use tf-pose-estimation
@@ -41,7 +42,7 @@ Python version > 3.3
 
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-## start
+## Run
 ```
 conda create myenv
 conda activate myenv
