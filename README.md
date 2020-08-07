@@ -5,7 +5,9 @@ The personalized AI posture practitioner for everyone
 
 [AI module](#ai-module)
 
-[Demo](#demo) [Here is a video demo](demo.mp4)
+[Demo](#demo) 
+
+ -Here is a [video demo](demo.mp4)
 
 [Real Product](#real-product)
 
