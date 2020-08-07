@@ -70,8 +70,10 @@ def analysis(resize = '432x638', model='mobilenet_thin', resize_out_ratio=4, ten
 
             # Display messages
             y_value = 60
+            if len(messages) == 0:
+                cv2.putText(image, "NICE SIT !!! KEEP IT UP ;)", (10, y_value),  cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
             for message in messages:
-                cv2.putText(image, message, (10, y_value),  cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                cv2.putText(image, message, (10, y_value),  cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
                 y_value += 30
             messages = []
         if display:
