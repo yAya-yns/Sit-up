@@ -19,13 +19,6 @@ import { File } from '@ionic-native/file/ngx';
 
 export class homePage implements OnInit {
 
-  smallPreview: boolean;
-  IMAGE_PATH: any;
-  colorEffect = 'none';
-  setZoom = 1;
-  flashMode = 'off';
-  isToBack = false;
-  imageNames = [];
   connected = false;
   correct = true;
 
@@ -56,23 +49,14 @@ export class homePage implements OnInit {
   }
 
   startCameraAbove() {
-
     this.connected = true;
-    this.pose.call().subscribe(
-      (ret) => {
-        console.log('success')
-      }, (err) => {
-        console.log(err)
-      }
-    )
-    
-    this.generateImageName('giphy', 24);
-    showImageInVideo(this.imageNames, 0)
-    this.cameraPreview.startCamera(this.cameraPreviewOpts);
-    this.isToBack = false;
-    this.cameraPreview.stopCamera().then(() => {
-      this.isToBack = false;
-    })
+    // this.pose.call().subscribe(
+    //   (ret) => {
+    //     console.log('success')
+    //   }, (err) => {
+    //     console.log(err)
+    //   }
+    // )
   }
 
   load(){
@@ -95,22 +79,6 @@ export class homePage implements OnInit {
         console.log(err)
       }
     )
-  }
-
-  generateImageName(name, number) {
-    for (let i = 0; i < number; i++){
-      this.imageNames.push(name + '-' + i + '.jpg');
-    }
-  }
-
-}
-
-function showImageInVideo(images, i) {
-  if (i < images.length) {
-    document.getElementById('video').style.background = "url('../../assets/giphy-0/" + images[i] + "')";
-    setTimeout(showImageInVideo.bind(null,images, i+1), 300)
-  }else{
-    document.getElementById('video').style.background = "";
   }
 }
 
