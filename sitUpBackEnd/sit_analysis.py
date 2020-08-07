@@ -111,8 +111,6 @@ class analysis_tool:
             messages.append("Could not find your ankle :<")
         if ("LAnkle" in self.dir and "LKnee" in self.dir and "LHip" in self.dir) or ("RAnkle" in self.dir and "RKnee" in self.dir and "RHip" in self.dir):
             self._analysis_knee_angle(messages)
-        if (len(messages) == 0):
-            messages.append("NICE SIT !!! KEEP IT UP ;)")
         return messages
 
 
@@ -198,8 +196,6 @@ class front_analysis_tool(analysis_tool):
             messages.append("Could not find your right shoulder :<")
         if "LShoulder" in self.dir and "RShoulder" in self.dir:
             self._analysis_shoulder_orientation(messages)
-        if len(messages) == 0:
-            messages.append("Nice Sit !!! Keep it up ;)")
         return messages
 
 
