@@ -2,8 +2,12 @@
 The personalized AI posture practitioner for everyone
 
 [Run the app](#run-the-app-using-flask--ai-module--ionic)
+
 [AI module](#ai-module)
-[Demo](#Demo)
+
+[Demo](#demo)
+
+[Real Product](#real-product)
 
 
 # Run the app using Flask + AI module + Ionic
