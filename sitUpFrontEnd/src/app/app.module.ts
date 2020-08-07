@@ -1,3 +1,4 @@
+import { enterAnimation } from './animation/nav-animation';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -17,7 +18,9 @@ import { CameraPreview } from '@ionic-native/camera-preview/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot({
+    navAnimation: enterAnimation
+  }), AppRoutingModule, HttpClientModule],
   providers: [
     CameraPreview,
     StatusBar,
