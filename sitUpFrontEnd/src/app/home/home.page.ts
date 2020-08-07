@@ -29,7 +29,7 @@ export class homePage implements OnInit {
   connected = false;
   correct = true;
 
-  img: any ="assets/video/demo2.mp4";
+  img: any ="assets/video/demo.mp4";
 
   
 
