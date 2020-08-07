@@ -1,6 +1,9 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
+[Run the app](#run-the-app-using-flask--ai-module--ionic)
+[AI module](#ai-module)
+[Demo](#Demo)
 
 
 # Run the app using Flask + AI module + Ionic
@@ -55,7 +58,8 @@ Simple test! go to the subfolder just created and run with webcamera: (for mac u
 For the argument direction, you can choose front, side45 or side90;
 Note when specifying side45, for the purpose of accuracy, please make sure camera is at 45 angle of your front;
 
-# Try the demo vison with only ionic
+# Demo
+Try the demo vison with only ionic
 
 ![demo1](demoPic/demo1.png)
 
