@@ -14,21 +14,21 @@
                 </ion-button>
             </div>
 
-            <div  class="bottom" *ngIf="connected">
+            <!-- <div  class="bottom" *ngIf="connected">
               <div *ngIf="correct"><ion-icon  color="success" name="sunny-outline" isActive=true>Right</ion-icon> <span color="success">Right</span></div>
               <div *ngIf="!correct"><ion-icon  color="danger" name="sunny-outline" isActive=true>Wrong</ion-icon> <span color="danger">Wrong</span></div>
-            </div>
+            </div> -->
 
             <div *ngIf="connected">
 
               <!-- this is for demo -->
-              <!-- <video width="100%"  autoplay preload  [muted]="'muted'">
+              <video width="100%"  autoplay preload  [muted]="'muted'">
                 <source src={{img}}>
                 Your device does not support the video player
-              </video> -->
+              </video>
 
               <!-- in real situation -->
-              <img src="http://127.0.0.1:5000/video_feed" alt="flask not connected, please activate flask first">
+              <!-- <img src="http://127.0.0.1:5000/video_feed" alt="not connected"> -->
               <!-- <img src={{img}} alt=""> -->
               <ion-button (click)="stopCamera()"  fill="clear" style="position: fixed; top: 0em; right: 0px; transform: translate(20%, 0%); font-size: 1.5em;">
                 <ion-icon  name="close-circle-sharp" color="pink"></ion-icon>
@@ -72,6 +72,11 @@
         Press The Button To Start!
       </ion-text>
     </ion-row>
-
+    <ion-row> <br></ion-row>
+    <ion-row>
+    <ion-button  class="center" color="white" fill="outline" shape="round" [routerLink] = "['/tabs']">
+      Quit Demo
+    </ion-button>
+    </ion-row>
   </ion-grid>
 </ion-content>

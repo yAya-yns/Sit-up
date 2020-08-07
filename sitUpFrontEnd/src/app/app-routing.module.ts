@@ -12,7 +12,11 @@ const routes: Routes = [
   {
     path: 'land-in',
     loadChildren: () => import('./land-in/land-in.module').then( m => m.LandInPageModule)
+  },  {
+    path: 'demo',
+    loadChildren: () => import('./demo/demo.module').then( m => m.DemoPageModule)
   }
+
 
 ];
 @NgModule({
