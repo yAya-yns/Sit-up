@@ -1,7 +1,7 @@
 from flask import (Flask,json, request, Response)
 from flask_cors import CORS, cross_origin
 from flask import send_file
-from api import tfpose
+
 import sit_up
 import multiprocessing
 import time
@@ -100,9 +100,8 @@ def call_tfpose():
     global thread
     thread = multiprocessing.Process(target=sit_up.analysis, args=())
     thread.start()
-    status, msg = tfpose.call_tfpose()
     # place-holder return
-    return Response(json.dumps({'msg': msg}), status)
+    return Response(json.dumps({'msg': 'success'}), 200)
 
 @app.route('/close')
 def close():

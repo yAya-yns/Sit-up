@@ -1,1 +1,0 @@
-python sit-up.py --model=mobilenet_thin --os=windows --resize=432x368 --camera=0
