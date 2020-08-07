@@ -30,8 +30,8 @@ $ ionic serve
 ```
 enjoy the app!
 
-![demo](demo.png)
-![demo1](demo2.png)
+![Image Text](demo/demo.png)
+![demo1](demo/demo2.png)
 
 # AI module
 
@@ -57,7 +57,7 @@ Note when specifying side45, for the purpose of accuracy, please make sure camer
 
 # Try the demo vison with only ionic
 
-![image-20200807130704237](demo1.png)
+![Image Text](demo/demo1.png)
 
 ```bash
 $ cd setUpFrontEnd 
@@ -66,3 +66,9 @@ $ ionic serve
 ```
 
 Then go to profile and hit the `demo` button
+
+# Real Product
+![Image Text](demo/demo3.png)
+![Image Text](demo/demo4.png)
+![Image Text](demo/demo5.png)
+![Image Text](demo/demo6.png)
