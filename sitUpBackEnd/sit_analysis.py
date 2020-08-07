@@ -271,6 +271,4 @@ class side_analysis_tool(analysis_tool):
             messages.append("Could not find your right shoulder :<")
         if "LShoulder" in self.dir and "RShoulder" in self.dir and "Neck" in self.dir and "Nose" in self.dir:
             self._analysis_shoulder_orientation(messages)
-        if len(messages) == 0:
-            messages.append("Nice Sit !!! Keep it up ;)")
         return messages
