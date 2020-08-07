@@ -1,7 +1,7 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
-![team_icon_4](team_icon_4.png)
+<img src="team_icon_4.png" alt="team_icon_4" style="zoom:25%;" />
 
 # Try the demo vison of the App on your browser
 ![image-20200807130704237](demo1.png)
