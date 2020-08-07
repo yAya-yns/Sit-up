@@ -4,10 +4,11 @@ The personalized AI posture practitioner for everyone
 # Try the demo vison of the App on your browser
 make sure you installed [ionic](https://ionicframework.com/docs/intro/cli)
 ```bash
-$ cd Demo 
+$ cd setUpFrontEnd 
 $ npm i
 $ ionic serve
 ```
+Then go to profile and hit the `demo` button
 
 # AI module
 Use tf-pose-estimation
