@@ -28,7 +28,9 @@ export class homePage implements OnInit {
   imageNames = [];
   connected = false;
   correct = true;
-  img: any;
+
+  img: any ="assets/video/demo2.mp4";
+
   
 
   constructor(private sanitizer: DomSanitizer, private cameraPreview: CameraPreview, private file: File, private pose: TfposeService) {
@@ -50,63 +52,40 @@ export class homePage implements OnInit {
   photo: SafeResourceUrl;
 
 
-
-  // async takePicture() {
-  //   const image = await Plugins.Camera.getPhoto({
-  //     quality: 100,
-  //     allowEditing: true,
-  //     resultType: CameraResultType.DataUrl,
-  //     source: CameraSource.Camera
-  //   });
-
-  //   this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
-  // }
   ngOnInit() {
   }
 
-  // playVideo(){
-  //   this.videoPlayer.play('assets/video/1.mp4').then(() => {
-  //   console.log('video completed');
-  //   }).catch(err => {
-  //   console.log(err);
-  //   });
-  // }
   startCameraAbove() {
 
     this.connected = true;
-    // this.pose.call().subscribe(
-    //   (ret) => {
-    //     console.log('success')
-    //   }, (err) => {
-    //     console.log(err)
-    //   }
-    // )
+    this.pose.call().subscribe(
+      (ret) => {
+        console.log('success')
+      }, (err) => {
+        console.log(err)
+      }
+    )
     
-    // this.generateImageName('giphy', 24);
-    // showImageInVideo(this.imageNames, 0)
-    // this.cameraPreview.startCamera(this.cameraPreviewOpts);
-    // this.isToBack = false;
-    // this.cameraPreview.stopCamera().then(() => {
-    //   this.isToBack = false;
-    // })
-  }
-
-  // async load(){
-  //   this.pose.video().subscribe(
-  //     (ret) => {
-  //       this.img = ret
-  //       console.log('success')
-  //     }, (err) => {
-  //       console.log(err)
-  //     }
-  //   )
-  // }
-  startCameraBelow() {
+    this.generateImageName('giphy', 24);
+    showImageInVideo(this.imageNames, 0)
+    this.cameraPreview.startCamera(this.cameraPreviewOpts);
+    this.isToBack = false;
     this.cameraPreview.stopCamera().then(() => {
-      this.isToBack = true;
-      this.cameraPreview.startCamera({ x: 0, y: 50, width: window.screen.width, height: window.screen.height, camera: "front", tapPhoto: true, previewDrag: false, toBack: true });
+      this.isToBack = false;
     })
   }
+
+  load(){
+    this.pose.video().subscribe(
+      (ret) => {
+        this.img = ret
+        console.log('success')
+      }, (err) => {
+        console.log(err)
+      }
+    )
+  }
+
   stopCamera() {
     this.connected = false;
     this.pose.close().subscribe(
@@ -118,58 +97,11 @@ export class homePage implements OnInit {
     )
   }
 
-  takePicture() {
-    this.cameraPreview.takePicture({
-      width: 1280,
-      height: 1280,
-      quality: 85
-    }).then((imageData) => {
-      this.IMAGE_PATH = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      console.log(err);
-      this.IMAGE_PATH = 'assets/img/test.jpg';
-    });
-  }
-
-  switchCamera() {
-    this.cameraPreview.switchCamera();
-  }
-
-  show() {
-    this.cameraPreview.show();
-  }
-
-  hide() {
-    this.cameraPreview.hide();
-  }
-
-  changeColorEffect() {
-    this.cameraPreview.setColorEffect(this.colorEffect);
-  }
-
-  changeFlashMode() {
-    this.cameraPreview.setFlashMode(this.flashMode);
-  }
-
-  changeZoom() {
-    this.cameraPreview.setZoom(this.setZoom);
-  }
-
-  showSupportedPictureSizes() {
-    this.cameraPreview.getSupportedPictureSizes().then((sizes) => {
-      console.log(sizes);
-    }, (err) => {
-      console.log(err);
-    });
-  }
-
   generateImageName(name, number) {
     for (let i = 0; i < number; i++){
       this.imageNames.push(name + '-' + i + '.jpg');
     }
   }
-
-
 
 }
 

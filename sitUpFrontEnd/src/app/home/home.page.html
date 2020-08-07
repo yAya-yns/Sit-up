@@ -1,28 +1,6 @@
-<ion-header [translucent]="true">
-  <!-- <ion-toolbar>
-    <ion-title class="center">
-      Sit-Up!
-    </ion-title>
-  </ion-toolbar> -->
-</ion-header>
-
 <ion-content class="home" [fullscreen]="true" [ngClass]="{'custom-ion-content': isToBack}">
 
   <ion-grid>
-
-    <ion-row class="center icon">
-      <!-- <ion-col>
-        <ion-icon color="success" name="sunny-outline" isActive=true></ion-icon> <span color="success">Right</span>
-      </ion-col> -->
-      <!-- <ion-col>
-        <ion-button (click)="switchCamera()" fill="clear" color="medium">
-          <ion-icon name="sync-circle-outline"> </ion-icon> <span>Switch</span>
-        </ion-button>
-      </ion-col> -->
-      <!-- <ion-col>
-        <ion-icon color="danger" name="sunny-outline"></ion-icon> <span color="danger">Wrong</span>
-      </ion-col> -->
-    </ion-row>
 
     <ion-row>
       <ion-col>
@@ -31,38 +9,40 @@
 
             <div class="wcenter" *ngIf="!connected">
                 <ion-button  (click)="startCameraAbove()" shape="round" color="green" class="fit-parent" fill="clear">
-                  <!-- <ion-icon slot="start" name="arrow-forward-circle" color="light"></ion-icon> -->
-                  <!-- <ion-icon name="power-outline"></ion-icon> -->
-                  <!-- Connect -->
                   <ion-icon src="assets/icon/Asset.svg"></ion-icon>
 
                 </ion-button>
             </div>
-            <div *ngIf="connected">
-              <!-- <video width="100%" autoplay controls preload  [muted]="'muted'">
-                <source src={{img}}>
-                Your device does not support the video player
-              </video> -->
-              <!-- <img src="http://127.0.0.1:5000/video_feed" alt="not connected"> -->
-              <img src={{img}} alt="">
-              <ion-button (click)="stopCamera()"  fill="clear" style="position: fixed; top: 0em; right: 0px; transform: translate(20%, 0%); font-size: 1.5em;">
-                <ion-icon  name="close-circle-sharp" color="pink"></ion-icon>
-              </ion-button>
-            </div>
-            <!-- <canvas id="video" style="width: 100%; height: 95%;" ></canvas> -->
+
             <div  class="bottom" *ngIf="connected">
               <div *ngIf="correct"><ion-icon  color="success" name="sunny-outline" isActive=true>Right</ion-icon> <span color="success">Right</span></div>
               <div *ngIf="!correct"><ion-icon  color="danger" name="sunny-outline" isActive=true>Wrong</ion-icon> <span color="danger">Wrong</span></div>
-              
             </div>
+
+            <div *ngIf="connected">
+
+              <!-- this is for demo -->
+              <video width="100%" style="width: 100%; height: 95%;" autoplay preload  [muted]="'muted'">
+                <source src={{img}}>
+                Your device does not support the video player
+              </video>
+
+              <!-- in real situation -->
+              <!-- <img src="http://127.0.0.1:5000/video_feed" alt="not connected"> -->
+              <!-- <img src={{img}} alt=""> -->
+              <ion-button (click)="stopCamera()"  fill="clear" style="position: fixed; top: 0em; right: 0px; transform: translate(20%, 0%); font-size: 1.5em;">
+                <ion-icon  name="close-circle-sharp" color="pink"></ion-icon>
+              </ion-button>
+
+            </div>
+            
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
-    <!-- <ion-button (click)="load()" expand="block" fill="clear" shape="round">
-      Click me
-    </ion-button> -->
+
     <ion-row *ngIf="connected">
+      <!-- score bar -->
       <ion-col>
         <ion-card class="center score" >
           <ion-text color="green">
@@ -81,12 +61,8 @@
       </ion-col>
     </ion-row>
 
-    <!-- <ion-row> <br> </ion-row>
-    <ion-row>
-      <ion-button class="center" shape="round" color="success" (click)="takePicture()" color="green">Set A Goal!
-      </ion-button>
-    </ion-row> -->
     <ion-row *ngIf="connected">
+      <!-- massage -->
       <ion-text id="msg" color="white" class="center" style="font-size: small;">
         Good Job! Keep going!
       </ion-text>
@@ -97,7 +73,5 @@
       </ion-text>
     </ion-row>
 
-
   </ion-grid>
-
 </ion-content>
