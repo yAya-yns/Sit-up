@@ -14,7 +14,7 @@ The personalized AI posture practitioner for everyone
 
 
 # Run the app using Flask + AI module + Ionic
-## requirement 
+## requirement 	
 Python version > 3.3
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
  [ionic](https://ionicframework.com/docs/intro/cli)
@@ -68,7 +68,10 @@ Note when specifying side45, for the purpose of accuracy, please make sure camer
 # Demo
 Try the demo vison with only ionic
 
-Here is a [video demo](demo.mp4)
+Here are two  video demos 
+
+- [video demo1](demoPic/demo.mp4)
+- [video demo2](demoPic/demo.mp4)
 
 ![demo1](demoPic/demo1.png)
 
