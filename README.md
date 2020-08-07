@@ -42,7 +42,7 @@ Python version > 3.3
 
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-## start
+## Run
 ```
 conda create myenv
 conda activate myenv
