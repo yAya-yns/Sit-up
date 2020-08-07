@@ -1,10 +1,10 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
-![team_icon_4](.\README.assets\team_icon_4.png)
+![team_icon_4](team_icon_4.png)
 
 # Try the demo vison of the App on your browser
-![image-20200807130704237](.\README.assets\demo1.png)
+![image-20200807130704237](demo1.png)
 
 make sure you installed [ionic](https://ionicframework.com/docs/intro/cli)
 
@@ -67,5 +67,5 @@ $ ionic serve
 ```
 enjoy the app!
 
-![demo](.\README.assets\demo.png)
-![demo1](.\README.assets\demo1-1596820179535.png)
+![demo](demo.png)
+![demo1](demo2.png)
