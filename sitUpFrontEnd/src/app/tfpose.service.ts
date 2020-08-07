@@ -36,5 +36,14 @@ export class TfposeService {
       {headers}
     )
   }
+  video() {
+    let headers = new HttpHeaders();
+    headers = headers.append('Accept', '*/*');
+
+    return this.http.get(
+      environment.video,
+      {headers}
+    )
+  }
 }
 

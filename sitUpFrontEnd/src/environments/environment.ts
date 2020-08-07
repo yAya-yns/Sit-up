@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   endpoint: 'http://127.0.0.1:5000/calltfpose',
   img: 'http://127.0.0.1:5000/img',
-  close: 'http://127.0.0.1:5000/close'
+  close: 'http://127.0.0.1:5000/close',
+  video:'http://127.0.0.1:5000/video_feed'
 };
 
 /*

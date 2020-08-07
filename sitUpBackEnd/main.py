@@ -114,8 +114,17 @@ def close():
 
 @app.route('/img')
 def img():
-    filename = sit_up.get_path()
-    return send_file(filename, mimetype='image/gif')
+    # filename = sit_up.get_path()
+    # return send_file(filename, mimetype='image/gif')
+    Response(gen(CCamera()),
+             mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+class CCamera(object):
+    def get_frame(self):
+        f = sit_up.get_path()
+        img = open(f , 'rb').read()
+        return img
 
 if __name__ == '__main__':
     app.run(debug=True)

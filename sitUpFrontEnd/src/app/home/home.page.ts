@@ -74,21 +74,14 @@ export class homePage implements OnInit {
   startCameraAbove() {
 
     this.connected = true;
-    this.pose.call().subscribe(
-      (ret) => {
-        console.log('success')
-      }, (err) => {
-        console.log(err)
-      }
-    )
-    this.pose.img().subscribe(
-      (ret) => {
-        this.img = ret
-        console.log('success')
-      }, (err) => {
-        console.log(err)
-      }
-    )
+    // this.pose.call().subscribe(
+    //   (ret) => {
+    //     console.log('success')
+    //   }, (err) => {
+    //     console.log(err)
+    //   }
+    // )
+    
     // this.generateImageName('giphy', 24);
     // showImageInVideo(this.imageNames, 0)
     // this.cameraPreview.startCamera(this.cameraPreviewOpts);
@@ -98,6 +91,16 @@ export class homePage implements OnInit {
     // })
   }
 
+  // async load(){
+  //   this.pose.video().subscribe(
+  //     (ret) => {
+  //       this.img = ret
+  //       console.log('success')
+  //     }, (err) => {
+  //       console.log(err)
+  //     }
+  //   )
+  // }
   startCameraBelow() {
     this.cameraPreview.stopCamera().then(() => {
       this.isToBack = true;
