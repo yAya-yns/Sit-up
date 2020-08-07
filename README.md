@@ -4,9 +4,9 @@ The personalized AI posture practitioner for everyone
 # Run the App on your browser
 make sure you installed [ionic](https://ionicframework.com/docs/intro/cli)
 ```bash
-cd SitUpFrontEnd 
-npm i
-ionic serve
+$ cd SitUpFrontEnd 
+$ npm i
+$ ionic serve
 ```
 
 # AI module
@@ -35,24 +35,29 @@ For the argument direction, you can choose front, side45 or side90;
 
 Note when specifying side45, for the purpose of accuracy, please make sure camera is at 45 angle of your front;
 
-# Flask
+# Run the app using Flask + AI module + Ionic
 ## requirement 
 Python version > 3.3
 
+[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
 ## start
 ```
-$ python3 -m venv flaskApi
-(linux or mac)
-$ ./flaskApi/bin/activate 
-(windows)
-$ flaskApi\Scripts\activate
-$ pip install -r requirements.txt
-
-$ cd app
-(linux or mac)
-$ export FLASK_APP=main.py
-(windows)
-$ set FLASK_APP=main.py
-$ flask run
-
+conda create myenv
+conda activate myenv
+```
+1. install all requiment according to AI module
+2. copy paste all files in sitUpBackEnd to folder of pose-estimation-detection cloned from AI module
+3. under conda environment, run 
+```
+$ cd pose-estimation-detection
+$ python main.py
+```
+4. go to ionic folder and start the app
+```
+$ cd sitUpFrontEnd
+$ npm i
+$ ionic serve
+```
+enjoy the app!
 
