@@ -1,7 +1,7 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
-[Presentation](presentation/Sit-up_Presentation_V6.pdf)
+[Presentation](presentation/Sit-up_Presentation_V9.pdf)
 
 [Run the app](#run-the-app-using-flask--ai-module--ionic)
 
@@ -16,8 +16,11 @@ The personalized AI posture practitioner for everyone
 # Run the app using Flask + AI module + Ionic
 ## requirement 	
 Python version > 3.3
+
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
  [ionic](https://ionicframework.com/docs/intro/cli)
+ 
 [AI module](#ai-module)
 
 ## Run
@@ -90,3 +93,6 @@ Then go to profile and hit the `demo` button
 ![demo4](demoPic/demo4.png)
 ![demo5](demoPic/demo5.png)
 ![demo6](demoPic/demo6.png)
+
+# Git Repo
+https://github.com/yAya-yns/Sit-up
