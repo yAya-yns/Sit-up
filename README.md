@@ -5,7 +5,7 @@ The personalized AI posture practitioner for everyone
 
 [Presentation](/presentation)
 
-[video for the final round of the competition](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
+[Video for the final round of the competition](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
 
 [Run the app](#run-the-app-using-flask--ai-module--ionic)
 
