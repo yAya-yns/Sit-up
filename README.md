@@ -1,7 +1,11 @@
 # Sit-up!
 The personalized AI posture practitioner for everyone
 
+1st Place Winning Project of the University of Toronto Innovation Fair 2020
+
 [Presentation](/presentation)
+
+[Final round presentation video for the competition](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
 
 [Run the app](#run-the-app-using-flask--ai-module--ionic)
 
