@@ -1,11 +1,13 @@
 # Sit-up!
 ### The personalized AI posture practitioner that prevents cervical & lumbar vertebral diseases from sedentary lifestyle using deep learning and computer vision
 
+
 ### :1st_place_medal:1st Place Winning Project of the University of Toronto Innovation Fair 2020:1st_place_medal:
 
-[Presentation](/presentation)
+[Presentation Record](https://youtu.be/g5q0wnrUlqo)
 
-[Video for the final round of the competition](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
+[Presentation Slides](presentation/Sit-up_Presentation_V9.pdf)
+
 
 [Run the app](#run-the-app-using-flask--ai-module--ionic)
 
