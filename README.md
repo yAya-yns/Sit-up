@@ -31,8 +31,8 @@ Python version > 3.3
 
 ## Run
 ```
-conda create myenv
-conda activate myenv
+conda create situp_env
+conda activate situp_env
 ```
 1. install all requiment according to AI module
 2. copy paste all files in sitUpBackEnd to folder of pose-estimation-detection cloned from AI module
