@@ -3,6 +3,7 @@
 
 
 ### :1st_place_medal:1st Place Winning Project of the University of Toronto Innovation Fair 2020:1st_place_medal:
+### Received funding from Huawei
 
 [Presentation Record](https://youtu.be/g5q0wnrUlqo)
 
