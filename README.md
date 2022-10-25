@@ -5,15 +5,15 @@
 ### :1st_place_medal:1st Place Winner of the University of Toronto Innovation Fair 2020:1st_place_medal:
 ### :moneybag:Received funding from Huawei:moneybag:
 
-Presentation: [Investor Version](https://drive.google.com/file/d/155ksg1Zr3Qm_RuQNGr4qIi9ixDmOkKW0/view?usp=sharing) & [Developer Version](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
+- Presentation: [Investor Version](https://drive.google.com/file/d/155ksg1Zr3Qm_RuQNGr4qIi9ixDmOkKW0/view?usp=sharing) & [Developer Version](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
 
-Presentation Slides: [Investor Version](presentation/Sit-up_Slide_business.pdf) & [Developer Version](presentation/Sit-up_Slide_V10.pdf)
+- Presentation Slides: [Investor Version](presentation/Sit-up_Slide_business.pdf) & [Developer Version](presentation/Sit-up_Slide_V10.pdf)
 
-[Run the app](#run-the-app-using-flask--ai-module--ionic)
+- [Run the app](#run-the-app-using-flask--ai-module--ionic)
 
-[AI module](#ai-module)
+- [AI module](#ai-module)
 
-[Demo](#demo) 
+- [Demo](#demo) 
 
 
 [Real Product](#real-product)
