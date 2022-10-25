@@ -7,7 +7,7 @@
 
 [Presentation Record](https://youtu.be/g5q0wnrUlqo)
 
-[Presentation Slides](presentation/Sit-up_Presentation_V10.pdf)
+[Presentation Slides](presentation/Sit-up_Slide_V10.pdf)
 
 
 [Run the app](#run-the-app-using-flask--ai-module--ionic)
