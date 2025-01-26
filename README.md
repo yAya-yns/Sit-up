@@ -1,5 +1,5 @@
 # Sit-up!
-### The personalized AI posture practitioner that prevents cervical & lumbar vertebral diseases from sedentary lifestyle using deep learning and computer vision
+### Personalized AI posture practitioner that prevents cervical & lumbar vertebral diseases from sedentary lifestyle using deep learning and computer vision
 
 
 ### :1st_place_medal:Top-Startup Award from Toronto Innovation Fair:1st_place_medal:
