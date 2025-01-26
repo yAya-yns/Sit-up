@@ -2,8 +2,8 @@
 ### The personalized AI posture practitioner that prevents cervical & lumbar vertebral diseases from sedentary lifestyle using deep learning and computer vision
 
 
-### :1st_place_medal:1st Place Winner of the University of Toronto Innovation Fair 2020:1st_place_medal:
-### :moneybag:Received funding from Huawei:moneybag:
+### :1st_place_medal:Top-Startup Award from Toronto Innovation Fair:1st_place_medal:
+### :moneybag:Raised $10,000 in funding with an initial pitch:moneybag:
 
 - Presentation: [Investor Version](https://drive.google.com/file/d/155ksg1Zr3Qm_RuQNGr4qIi9ixDmOkKW0/view?usp=sharing) & [Developer Version](https://drive.google.com/file/d/1A-nXtJDdQNL0YV1GFOn9JKkeLNTdISxA/view?usp=sharing)
 
